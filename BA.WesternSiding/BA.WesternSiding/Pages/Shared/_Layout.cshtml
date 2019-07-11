@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    @RenderSection("Metatags", false)
+    <environment include="Development">
+        <!--<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />-->
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />-->
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <header id="header">
+        <div class="inner">
+            <a id="logo" href="/"><img src="/images/western-siding-logo.png" alt="Western Siding"></a>
+            <div id="request-estimate">
+                <a asp-page="/RequestEstimate">Request Estimate</a>
+            </div>
+            <div id="address">
+                850 W Franklin Rd
+                <br>
+                Meridian, Idaho 83642
+                <br>
+                Office (208) 855-0100
+                <br>
+                Toll-Free (208) 627-0465
+            </div>
+        </div>
+        <nav id="nav-main">
+            <div class="inner">
+                <label for="show-menu" class="show-menu">Menu</label>
+                <input type="checkbox" id="show-menu">
+                <ul id="menu">
+                    <li>
+                        <a asp-page="/Index">Home</a>
+                    </li>
+                    <li>
+                        <a asp-page="/About">About</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Installation">Installation</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Siding">Siding</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Windows">Windows</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Doors">Doors</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Promotions">Promotions</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Testimonials">Testimonials</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    @RenderBody()
+
+    <footer id="footer">
+        <div class="inner">
+            <div id="business-info">
+                <p>
+                    &copy; Western Siding and Windows - @DateTime.Now.Year
+                </p>
+                <p>
+                    850 W Franklin Rd Meridian, Idaho 83642
+                    <br>
+                    Office: (208) 855-0100
+                    <br>
+                    Toll-Free: (208) 627-0465
+                    <br>
+                    <data itemprop="openingHours" value="Mo,Tu,We,Th,Fr 08:00-17:00">
+                        Monday through Friday 8-5pm
+                    </data>
+                    <br>
+                    Saturday by Appointment
+                </p>
+            </div>
+            <div id="social-media">
+                <a class="facebook" href="https://www.facebook.com/WesternSidingIdaho"></a>
+                <a class="twitter" href="https://twitter.com/westernsiding"></a>
+            </div>
+            <div class="clear">
+                <a href="http://boisewebhosting.com/">Boise Web Hosting</a> | <a href="http://boiseseo.com/">Boise SEO</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <environment include="Development">
+        <script src="https://code.jquery.com/jquery-1.11.0.js"
+                integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+                crossorigin="anonymous"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+            crossorigin="anonymous"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+    </script>-->
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>
