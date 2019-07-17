@@ -21,6 +21,15 @@
                 </p>
 
                 <aside>
+                    <form id="contact-us" class="contact" method="post">
+                        <input type="text" class="form-control" asp-for="contactUsModel.Name" placeholder="Name">
+                        <input type="text" class="form-control" asp-for="contactUsModel.Email" placeholder="Email Address">
+                        <input type="text" class="form-control" asp-for="contactUsModel.Phone" placeholder="Phone">
+                        <input type="text" class="form-control" asp-for="contactUsModel.Referral" placeholder="How did you hear about us?">
+                        <textarea row="" col="" class="form-control" asp-for="contactUsModel.Comments" placeholder="Comments"></textarea>
+                        <div class="g-recaptcha" data-sitekey="6Lc2-4IUAAAAAC_lppBH0-K-wbaDTyA9lHpijugW"></div>
+                        <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
+                    </form>
                     <form id="contact-us" class="contact">
                         <table>
                             <tr>
@@ -100,7 +109,7 @@
                             </tr>
                         </table>
                     </form>
-                    </aside>
+                </aside>
             </div>
             <div class="right">
 

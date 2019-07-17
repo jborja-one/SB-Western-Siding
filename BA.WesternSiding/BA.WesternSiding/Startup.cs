@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using BA.WesternSiding.Adapters;
+using BA.WesternSiding.Configuration;
+using BA.Common.Services;
 
 namespace BA.WesternSiding
 {
@@ -33,6 +36,7 @@ namespace BA.WesternSiding
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSingleton<ISmtpService, SmtpService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

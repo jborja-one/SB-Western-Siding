@@ -81,36 +81,14 @@
 
                 <div class="quick-contact">
                     <div class="contact-head"></div>
-                    <form class="contact">
-                        <p class="header">
-                            Contact Us
-                        </p>
-                        <div>
-                            <input name="Name" type="text" placeholder="Name...">
-                        </div>
-                        <div>
-                            <input name="Email" type="text" placeholder="Email...">
-                        </div>
-                        <div>
-                            <input name="Phone" type="text" placeholder="Phone...">
-                        </div>
-                        <div>
-                            <input name="Referral" type="text" placeholder="How did you hear about us?">
-                        </div>
-                        <div>
-                            <textarea name="Message" placeholder="Message...">
-</textarea>
-                        </div>
-                        <div class="authentication">
-                            Authentication Code:
-                        </div>
-                        <div>
-                            <img alt="Form Validation Code Image" src="/scripts/form-security/security-image.png.php">
-                            <input class="verification" name="Verification Code" type="text" />
-                        </div>
-                        <div>
-                            <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
-                        </div>
+                    <form id="contact-us" class="contact" method="post">
+                        <input type="text" class="form-control" asp-for="contactUsModel.Name" placeholder="Name">
+                        <input type="text" class="form-control" asp-for="contactUsModel.Email" placeholder="Email Address">
+                        <input type="text" class="form-control" asp-for="contactUsModel.Phone" placeholder="Phone">
+                        <input type="text" class="form-control" asp-for="contactUsModel.Referral" placeholder="How did you hear about us?">
+                        <textarea row="" col="" class="form-control" asp-for="contactUsModel.Comments" placeholder="Comments"></textarea>
+                        <div class="g-recaptcha" data-sitekey="6Lc2-4IUAAAAAC_lppBH0-K-wbaDTyA9lHpijugW"></div>
+                        <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
                     </form>
                     <div class="contact-footer"></div>
                 </div>
