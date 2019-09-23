@@ -30,7 +30,7 @@ namespace BA.WesternSiding.Adapters
             _smtpService = smtpService;
         }
 
-        public bool CreateAndSendEmail(ContactUsModel contactUs)
+        public async Task<bool> CreateAndSendEmail(ContactUsModel contactUs)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace BA.WesternSiding.Adapters
                 throw new Exception("ContactUsAdapter.Create", e);
             }
 
-            return (SendMail());
+            return (await SendMail());
 
         }
 
@@ -102,11 +102,11 @@ namespace BA.WesternSiding.Adapters
             return _body;
         }
 
-        private bool SendMail()
+        private async  Task<bool> SendMail()
         {
             try
             {
-                return(_smtpService.SendMail(Message, ServerConfig));
+                return(await _smtpService.SendMailAsync(Message, ServerConfig, null));
             }
             catch(Exception e)
             {

@@ -29,10 +29,10 @@ namespace BA.WesternSiding.Pages
 
         public void OnGet() { }
 
-        public void OnPost()
+        public async Task OnPostAsync()
         {
             ContactUsAdapter _contactUs = new ContactUsAdapter(_config, _smtpService);
-            _contactUs.CreateAndSendEmail(contactUsModel);
+            await _contactUs.CreateAndSendEmail(contactUsModel);
         }
 
     }
