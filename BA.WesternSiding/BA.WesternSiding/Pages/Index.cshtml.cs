@@ -28,10 +28,12 @@ namespace BA.WesternSiding.Pages
 
         public void OnGet() { }
 
-        public async Task OnPostAsync()
+        public async Task<IActionResult> OnPostAsync()
         {
             ContactUsAdapter _contactUs = new ContactUsAdapter(_config, _smtpService);
             await _contactUs.CreateAndSendEmail(contactUsModel);
+            ViewData["Message"] = "Thank you.  We will contact you soon!";
+            return Page();
         }
 
     }

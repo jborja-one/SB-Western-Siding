@@ -11,9 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BA.Common" Version="0.2.2" />
+    <PackageReference Include="BA.Common" Version="0.2.4" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Templates\ContactUs.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
