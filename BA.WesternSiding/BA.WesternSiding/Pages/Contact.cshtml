@@ -1,20 +1,53 @@
 ﻿@page "/contact-us"
 @model ContactModel
-@{
-    ViewData["Title"] = "Contact Boise Siding Contractors - Western Siding";
-}
-@section Metatags
+@section Header
 {
-    <meta name="description" content="Contact Siding Contractors Boise | Western Siding. Since 1970 Western Siding has installed thousands of windows, doors, and siding for residents of Boise,...">
-    <meta name="keywords" content="">
+    <title>Contact Us @@ Western Siding | Meridian, Idaho</title>
     <link rel="canonical" href="https://www.westernsiding.com/contact-us" />
+    <meta name="description" content="Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today (208)855-0100.">
+    <meta name="referrer" content="unsafe-url">
+    <meta name="of:title" content="Western Siding Contact Us Page" />
+    <meta name="og:type" content="business.business" />
+    <meta name="og:URL" content="https://westernsiding.com/contact-us" />
+    <meta name="og:image" content="https://westernsiding.com/images/western-siding-logo.png" />
+    <meta name="og:description" content="Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today (208) 855-0100." />
+    <meta name="og:site_name" content="https://westernsiding.com" />
+
+    <script type="application/ld+json">
+        [
+        {
+        "@@context": "http://schema.org",
+        "@@type": "ContactPage",
+        "name": "Contact Us @@ Western Siding | Meridian, Idaho",
+        "description": "Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today: (208) 855-0100.",
+        "publisher": {
+        "@@type": "Person",
+        "name": "Tom Bruck" }
+        },
+        {
+        "@@context": "https://schema.org/",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [{
+        "@@type": "ListItem",
+        "position": 1,
+        "name": "Western Siding Home",
+        "item": "https://westernsiding.com"
+        },{
+        "@@type": "ListItem",
+        "position": 2,
+        "name": "Contact Us @@Western Siding",
+        "item": "https://westernsiding.com/contact-us"
+        }]
+        }
+        ]
+    </script>
 }
 <main>
     <div class="inner">
         <article id="content">
             <div class="left">
                 <h1>
-                    Contact Siding Contractors Boise | Western Siding
+                    About Us @@ Western Siding | Meridian, Idaho
                 </h1>
                 <p>
                     Since 1970 Western Siding has installed thousands of windows, doors, and siding for residents of Boise, Idaho and the Treasure Valley. We use the highest quality products available, giving you many options when it comes to style, color, and manufacturer, and provide the best trained and experienced installers we can find. We do business as Larry says, "Like ladies and gentlemen". Give us a call at <strong>208 855-0100</strong> or fill out our contact form below.
@@ -30,7 +63,8 @@
                         <div class="g-recaptcha" data-sitekey="6Lc2-4IUAAAAAC_lppBH0-K-wbaDTyA9lHpijugW"></div>
                         <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
                     </form>
-                    <form id="contact-us" class="contact">
+                    @ViewData["Message"]
+                    @*<form id="contact-us" class="contact">
                         <table>
                             <tr>
                                 <td>
@@ -108,7 +142,7 @@
                                 </td>
                             </tr>
                         </table>
-                    </form>
+                    </form>*@
                 </aside>
             </div>
             <div class="right">
@@ -128,7 +162,7 @@
                         Saturday by Appointment
                     </p>
                     <p>
-                        <img alt="Contact Western Siding - Boise, Idaho Siding Contractors" src="/images/260x83/contact-western-siding.jpg" width="260" height="83" />
+                        <img alt="Contact Western Siding - Boise, Idaho Siding Contractors" src="/images/contact-western-siding.jpg" width="260" height="83" />
                     </p>
                 </div>
             </div>
