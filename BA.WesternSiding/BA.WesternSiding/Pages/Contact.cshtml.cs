@@ -29,10 +29,20 @@ namespace BA.WesternSiding.Pages
 
         public void OnGet() { }
 
-        public void OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
-            ContactUsAdapter _contactUs = new ContactUsAdapter(_config, _smtpService);
-            _contactUs.CreateAndSendEmail(contactUsModel);
+            if(ModelState.IsValid)
+            {
+                ContactUsAdapter _contactUs = new ContactUsAdapter(_config, _smtpService);
+                await _contactUs.CreateAndSendEmail(contactUsModel);
+                ViewData["Message"] = "Your message has been recieved.";
+                return Page();
+            }
+                else
+            {
+                ViewData["Message"] = "There was a problem.  Try again!";
+                return Page();
+            }
         }
 
     }

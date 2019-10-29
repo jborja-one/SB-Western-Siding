@@ -3,11 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
     @RenderSection("Metatags", false)
-    <script type="application/ld+json">
-        {"@@context":"http://schema.org","@@graph":[{"@@context":"http://schema.org","@@type":"WebSite","url":"https://www.westernsiding.com/","name":"Western Siding"},{"@@type":"HomeAndConstructionBusiness","@@id":"https://www.westernsiding.com/","name":"Western Siding","description":"Serving the Treasure Valley for over 40 years, providing quality siding products and professional siding installations.","image":"https://www.westernsiding.com/images/contact-western-siding.jpg","url":"https://www.westernsiding.com/","logo":"https://www.westernsiding.com/style/images/western-siding-logo.png","priceRange":"$$$ - $$$$$","address":[{"@@type":"PostalAddress","streetAddress":"850 W Franklin Rd","addressLocality":"Meridian","addressRegion":"ID","postalCode":"83642"}],"geo":[{"@@type":"GeoCoordinates","latitude":"43.644106","longitude":"-116.265411"}],"telephone":"+12089084288","openingHours":["Mo-Fr 8:00-17:00"],"hasMap":{"@@type":"Map","url":"https://goo.gl/maps/tLf1WZ97Ch92"},"sameAs":["https://www.facebook.com/WesternSidingIdaho","https://twitter.com/westernsiding","https://plus.google.com/+WesternSidingMeridian"]}]}
-    </script>
+    @RenderSection("Header", false)
+
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png" />
@@ -21,7 +19,7 @@
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="&nbsp;" />
+    <meta name="application-name" content="Western Siding" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
