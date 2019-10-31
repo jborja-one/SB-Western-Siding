@@ -35,7 +35,7 @@ namespace BA.WesternSiding.Pages
             {
                 ContactUsAdapter _contactUs = new ContactUsAdapter(_config, _smtpService);
                 await _contactUs.CreateAndSendEmail(contactUsModel);
-                ViewData["Message"] = "<div class=\"message-success\">Your message has been recieved.</div>";
+                ViewData["Message"] = "Your message has been recieved.";
                 return Page();
             }
                 else
