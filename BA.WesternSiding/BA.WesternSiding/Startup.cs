@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using BA.WesternSiding.Adapters;
 using BA.WesternSiding.Configuration;
 using BA.Common.Services;
+using reCAPTCHA.AspNetCore;
 
 namespace BA.WesternSiding
 {
@@ -33,10 +34,10 @@ namespace BA.WesternSiding
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<ISmtpService, SmtpService>();
+            services.Configure<RecaptchaSettings>(Configuration.GetSection("RecaptchaSettings"));
+            services.AddTransient<IRecaptchaService, RecaptchaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

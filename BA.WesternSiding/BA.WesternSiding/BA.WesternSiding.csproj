@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>f224fa7e-befd-4b75-a279-b0fcf67d7184</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +15,7 @@
     <PackageReference Include="BA.Common" Version="0.2.4" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="reCAPTCHA.AspNetCore" Version="2.2.3" />
   </ItemGroup>
 
   <ItemGroup>
