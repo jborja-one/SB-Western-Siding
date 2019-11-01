@@ -46,6 +46,7 @@ namespace BA.WesternSiding
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
             }
             else
             {

@@ -60,13 +60,17 @@
                 <aside>
                     @using (Html.BeginForm(null, null, FormMethod.Post, new { @action = "contact-us", id = "contact-us", @class = "contact" }))
                     {
-                        @Html.Recaptcha(RecaptchaSettings.Value)
+                        @Html.ValidationSummary(true)
+
                         <input type="text" class="form-control" asp-for="contactUsModel.Name" placeholder="Name">
                         <input type="text" class="form-control" asp-for="contactUsModel.Email" placeholder="Email Address">
                         <input type="text" class="form-control" asp-for="contactUsModel.Phone" placeholder="Phone">
                         <input type="text" class="form-control" asp-for="contactUsModel.Referral" placeholder="How did you hear about us?">
                         <textarea row="" col="" class="form-control" asp-for="contactUsModel.Comments" placeholder="Comments"></textarea>
+                        <div>@Html.Recaptcha(RecaptchaSettings.Value)</div>
                         <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
+
+
                     }
                     @ViewData["Message"]
                     @*<form id="contact-us" class="contact">

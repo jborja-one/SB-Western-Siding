@@ -17,10 +17,13 @@ namespace BA.WesternSiding.Pages
     {
         private readonly IConfiguration _config;
         private readonly ISmtpService _smtpService;
-        private readonly IRecaptchaService _recaptcha;
+        private IRecaptchaService _recaptcha;
 
         [BindProperty]
         public ContactUsModel contactUsModel { get; set; }
+
+        [BindProperty]
+        public string Message { get; set; }
 
         public ContactModel(IConfiguration config, ISmtpService smtpService, IRecaptchaService recaptcha)
         {
@@ -38,7 +41,7 @@ namespace BA.WesternSiding.Pages
                 RecaptchaResponse recaptcha = await _recaptcha.Validate(Request);
                 if (!recaptcha.success)
                 {
-                    ModelState.AddModelError("", "There was an error validating the Recaptcha code.  Please try Again!");
+                    ModelState.AddModelError("Recaptcha", "There was an error validating the Recaptcha code.  Please try Again!");
                     return Page();
                 }
 
