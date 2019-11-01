@@ -43,16 +43,16 @@ namespace BA.WesternSiding
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
+            //if (env.IsDevelopment())
+            //{
                 app.UseDeveloperExceptionPage();
                 
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/Error");
                 app.UseHsts();
-            }
+            //}
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
