@@ -1,9 +1,10 @@
 ﻿@page "/contact-us"
 @using Microsoft.Extensions.Options
 @using reCAPTCHA.AspNetCore
-@inject IOptions<RecaptchaSettings> RecaptchaSettings
 
 @model ContactModel
+@inject IOptions<RecaptchaSettings> RecaptchaSettings
+
 @section Header
 {
     <title>Contact Us @@ Western Siding | Meridian, Idaho</title>
@@ -67,91 +68,91 @@
                         <input type="text" class="form-control" asp-for="contactUsModel.Phone" placeholder="Phone">
                         <input type="text" class="form-control" asp-for="contactUsModel.Referral" placeholder="How did you hear about us?">
                         <textarea row="" col="" class="form-control" asp-for="contactUsModel.Comments" placeholder="Comments"></textarea>
-                        <div>@Html.Recaptcha(RecaptchaSettings.Value)</div>
-                        <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
+                        <div>@Html.Recaptcha(RecaptchaSettings?.Value)</div>
+                        <input name="Form" type="hidden" value="Contact Us"><input id="recaptcha" type="submit" value="Submit">
 
 
                     }
                     @ViewData["Message"]
                     @*<form id="contact-us" class="contact">
-                            <table>
-                                <tr>
-                                    <td>
-                                        Name:
-                                    </td>
-                                    <td>
-                                        <input name="Name" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Email:
-                                    </td>
-                                    <td>
-                                        <input name="Email" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Address:
-                                    </td>
-                                    <td>
-                                        <input name="Address" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Company:
-                                    </td>
-                                    <td>
-                                        <input name="Company" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Phone:
-                                    </td>
-                                    <td>
-                                        <input name="Phone" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        How did you hear about us?
-                                    </td>
-                                    <td>
-                                        <input name="Referral" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Message:
-                                    </td>
-                                    <td>
-                                        <textarea name="Message">
-        </textarea>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="align-center">
-                                        Verification:
-                                        <br />
-                                        <span>Please type the letters you see into the box below.</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <img alt="Form Validation Code Image" src="/scripts/form-security/security-image.png.php">
-                                        <input class="verification" name="Verification Code" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>*@
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        Name:
+                                                    </td>
+                                                    <td>
+                                                        <input name="Name" type="text" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Email:
+                                                    </td>
+                                                    <td>
+                                                        <input name="Email" type="text" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Address:
+                                                    </td>
+                                                    <td>
+                                                        <input name="Address" type="text" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Company:
+                                                    </td>
+                                                    <td>
+                                                        <input name="Company" type="text" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Phone:
+                                                    </td>
+                                                    <td>
+                                                        <input name="Phone" type="text" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        How did you hear about us?
+                                                    </td>
+                                                    <td>
+                                                        <input name="Referral" type="text" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Message:
+                                                    </td>
+                                                    <td>
+                                                        <textarea name="Message">
+                        </textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" class="align-center">
+                                                        Verification:
+                                                        <br />
+                                                        <span>Please type the letters you see into the box below.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <img alt="Form Validation Code Image" src="/scripts/form-security/security-image.png.php">
+                                                        <input class="verification" name="Verification Code" type="text" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form>*@
                 </aside>
             </div>
             <div class="right">
