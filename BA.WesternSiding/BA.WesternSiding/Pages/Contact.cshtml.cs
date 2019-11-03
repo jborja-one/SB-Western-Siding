@@ -44,11 +44,13 @@ namespace BA.WesternSiding.Pages
                     ModelState.AddModelError("Recaptcha", "There was an error validating the Recaptcha code.  Please try Again!");
                     return Page();
                 }
-
-                ContactUsAdapter _contactUs = new ContactUsAdapter(_config, _smtpService);
-                await _contactUs.CreateAndSendEmail(contactUsModel);
-                ViewData["Message"] = "Your message has been recieved.";
-                return Page();
+                else
+                {
+                    ContactUsAdapter _contactUs = new ContactUsAdapter(_config, _smtpService);
+                    await _contactUs.CreateAndSendEmail(contactUsModel);
+                    ViewData["Message"] = "Your message has been recieved.";
+                    return Page();
+                }
             }
             else
             {
