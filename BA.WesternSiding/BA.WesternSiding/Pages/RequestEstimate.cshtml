@@ -1,5 +1,10 @@
 ﻿@page "/free-estimate-western-siding-idaho"
+@using Microsoft.Extensions.Options
+@using reCAPTCHA.AspNetCore
+
 @model RequestEstimateModel
+@inject IOptions<RecaptchaSettings> RecaptchaSettings
+
 @section Header
 {
     <title>Schedule your FREE Estimate @@ Western Siding | Meridian, Idaho</title>
@@ -8,7 +13,7 @@
     <meta name="referrer" content="unsafe-url">
     <meta name="of:title" content="Request a FREE Estimate @@ Western Siding | Meridian, Idaho" />
     <meta name="og:type" content="business.business" />
-    <meta name="og:URL" content="https://westernsiding.com/free-estimate-western-siding-idaho"" />
+    <meta name="og:URL" content="https://westernsiding.com/free-estimate-western-siding-idaho" />
     <meta name="og:image" content="https://westernsiding.com/images/western-siding-logo.png" />
     <meta name="og:description" content="Schedule your Free Siding or Replacement Windows Estimate. We offer our best siding prices to Boise, Idaho and the Treasure Valley communities. Call Today (208) 855-0100." />
     <meta name="og:site_name" content="https://westernsiding.com" />
@@ -47,91 +52,30 @@
         ]
     </script>
 }
-    <main>
-        <div class="inner">
-            <article id="content">
-                <h1>
-                    <img alt="Siding Costs - Replacement Windows Free Estimate" class="float-right" height="430" src="/images/free-siding-windows-estimate.jpg" width="314" /> Schedule your FREE Siding or Replacement Windows Estimate
-                </h1>
-                <p>
-                    We offer our best siding prices to Boise, Idaho and the Treasure Valley communities of Meridian, Eagle, Nampa, Caldwell, Star and Kuna right up front when we present the Western Siding free siding costs estimate. This service consists of a detailed proposal for siding your residential home, business office or commercial properties. We also provide our best replacement windows prices with our free replacement windows cost estimate. Fill out our estimate form below or give us a call at <strong>208 855-0100</strong>.
-                </p>
-                <form id="estimate" class="contact">
-                    <table>
-                        <tr>
-                            <td>
-                                Name:
-                            </td>
-                            <td>
-                                <input name="Name" type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Email:
-                            </td>
-                            <td>
-                                <input name="Email" type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Phone:
-                            </td>
-                            <td>
-                                <input name="Phone" type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Service:
-                            </td>
-                            <td>
-                                <span>
-                                    <input name="Service[]" type="checkbox" value="Siding" /> Siding
-                                </span>
-                                <span>
-                                    <input name="Service[]" type="checkbox" value="Windows" /> Windows
-                                </span>
-                                <span>
-                                    <input name="Service[]" type="checkbox" value="Doors - Patio Doors" /> Doors/Patio Doors
-                                </span>
-                                <span>
-                                    <input name="Service[]" type="checkbox" value="Eaves and Overhangs" /> Eaves and Overhangs
-                                </span>
-                                <span>
-                                    <input name="Service[]" type="checkbox" value="Repairs" /> Repairs
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Additional Information:
-                            </td>
-                            <td>
-                                <textarea name="Additional Information"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="align-center">
-                                Verification:
-                                <br />
-                                <span>Please type the letters you see into the box below.</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <img alt="Form Validation Code Image" src="/scripts/form-security/security-image.png.php">
-                                <input class="verification" name="Verification Code" type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </article>
-        </div>
-    </main>
+<main>
+    <div class="inner">
+        <article id="content">
+            <h1>
+                <img alt="Siding Costs - Replacement Windows Free Estimate" class="float-right" height="430" src="/images/free-siding-windows-estimate.jpg" width="314" /> Schedule your FREE Siding or Replacement Windows Estimate
+            </h1>
+            <p>
+                We offer our best siding prices to Boise, Idaho and the Treasure Valley communities of Meridian, Eagle, Nampa, Caldwell, Star and Kuna right up front when we present the Western Siding free siding costs estimate. This service consists of a detailed proposal for siding your residential home, business office or commercial properties. We also provide our best replacement windows prices with our free replacement windows cost estimate. Fill out our estimate form below or give us a call at <strong>208 855-0100</strong>.
+            </p>
+            <div class="message">@ViewData["Message"]</div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @action = "contact-us", id = "contact-us", @class = "contact" }))
+            {
+                @Html.ValidationSummary(true)
+
+                <input type="text" class="form-control" asp-for="contactUsModel.Name" placeholder="Name">
+                <input type="text" class="form-control" asp-for="contactUsModel.Email" placeholder="Email Address">
+                <input type="text" class="form-control" asp-for="contactUsModel.Phone" placeholder="Phone">
+                <input type="text" class="form-control" asp-for="contactUsModel.Referral" placeholder="How did you hear about us?">
+                <textarea row="" col="" class="form-control" asp-for="contactUsModel.Comments" placeholder="Comments"></textarea>
+                <div>@Html.Recaptcha(RecaptchaSettings?.Value)</div>
+                <input name="Form" type="hidden" value="Contact Us"><input id="recaptcha" type="submit" value="Submit">
+
+
+            }
+        </article>
+    </div>
+</main>

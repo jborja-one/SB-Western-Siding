@@ -1291,3 +1291,11 @@ div.message-failure {
             font-size: .85em;
             padding: 10px;
         }
+
+
+div.message {
+    color: dodgerblue;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
