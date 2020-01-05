@@ -17,35 +17,11 @@
     <meta name="og:image" content="https://westernsiding.com/images/western-siding-logo.png" />
     <meta name="og:description" content="Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today (208) 855-0100." />
     <meta name="og:site_name" content="https://westernsiding.com" />
-
-    <script type="application/ld+json">
-        [
-        {
-        "@@context": "http://schema.org",
-        "@@type": "ContactPage",
-        "name": "Contact Us @@ Western Siding | Meridian, Idaho",
-        "description": "Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today: (208) 855-0100.",
-        "publisher": {
-        "@@type": "Person",
-        "name": "Tom Bruck" }
-        },
-        {
-        "@@context": "https://schema.org/",
-        "@@type": "BreadcrumbList",
-        "itemListElement": [{
-        "@@type": "ListItem",
-        "position": 1,
-        "name": "Western Siding Home",
-        "item": "https://westernsiding.com"
-        },{
-        "@@type": "ListItem",
-        "position": 2,
-        "name": "Contact Us @@Western Siding",
-        "item": "https://westernsiding.com/contact-us"
-        }]
-        }
-        ]
-    </script>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@@WesternSiding">
+    <meta name="twitter:title" content="Contact Us @@ Western Siding | Meridian, Idaho">
+    <meta name="twitter:description" content="Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today (208)855-0100.">
+    <script type="application/ld+json">[{"@@context":"http://schema.org","@@type":"ContactPage","@@id":"https://westernsiding.com/contact/","name":"Contact Us @@ Western Siding | Meridian, Idaho","description":"Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today: (208) 855-0100.","publisher":{"@@type":"Person","name":"Tom Bruck"}},{"@@context":"https://schema.org/","@@type":"BreadcrumbList","itemListElement":[{"@@type":"ListItem","position":1,"name":"Western Siding Home","item":"https://westernsiding.com"},{"@@type":"ListItem","position":2,"name":"Contact Us @@Western Siding","item":"https://westernsiding.com/contact-us"}]}]</script>
 }
 <main>
     <div class="inner">
@@ -57,7 +33,7 @@
                 <p>
                     Since 1970 Western Siding has installed thousands of windows, doors, and siding for residents of Boise, Idaho and the Treasure Valley. We use the highest quality products available, giving you many options when it comes to style, color, and manufacturer, and provide the best trained and experienced installers we can find. We do business as Larry says, "Like ladies and gentlemen". Give us a call at <strong>208 855-0100</strong> or fill out our contact form below.
                 </p>
-
+                <div class="message">@ViewData["Message"]</div>
                 <aside>
                     @using (Html.BeginForm(null, null, FormMethod.Post, new { @action = "contact-us", id = "contact-us", @class = "contact" }))
                     {
@@ -73,7 +49,7 @@
 
 
                     }
-                    @ViewData["Message"]
+
                     @*<form id="contact-us" class="contact">
                                             <table>
                                                 <tr>

@@ -1,11 +1,6 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    @RenderSection("Metatags", false)
-    @RenderSection("Header", false)
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-610165-99"></script>
     <script>
@@ -15,8 +10,10 @@
 
         gtag('config', 'UA-610165-99');
     </script>
-
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @RenderSection("Metatags", false)
+    @RenderSection("Header", false)
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png" />
@@ -93,7 +90,6 @@
         </nav>
     </header>
     @RenderBody()
-
     <footer id="footer">
         <div class="inner">
             <div id="business-info">
@@ -123,14 +119,9 @@
             </div>
         </div>
     </footer>
-
-
-    <script src="https://code.jquery.com/jquery-1.11.0.js"
-            integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"
+            integrity="sha256-spTpc4lvj4dOkKjrGokIrHkJgNA0xMS98Pw9N7ir9oI="
             crossorigin="anonymous"></script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-
     @RenderSection("Scripts", required: false)
-
 </body>
 </html>
