@@ -1,5 +1,9 @@
 ﻿@page
+@using Microsoft.Extensions.Options
+@using reCAPTCHA.AspNetCore
+
 @model IndexModel
+@inject IOptions<RecaptchaSettings> RecaptchaSettings
 @section Header
 {
     <title>Windows, Doors & Siding @@ Western Siding | Meridian Idaho</title>
@@ -16,7 +20,9 @@
     <meta name="twitter:site" content="@@WesternSiding">
     <meta name="twitter:title" content="Western Siding is Idaho's premiere Window, Door and Siding contractor.  CALL Today:(208) 855-0100">
     <meta name="twitter:description" content="Western Siding is Idaho's premiere Window, Door and Siding contractor.  CALL Today:(208) 855-0100">
-    <script type="application/ld+json">[{"@@context":"http://schema.org","@@type":"LocalBusiness","logo":"https://westernsiding.com/images/western-siding-logo.png","name":"Western Siding","url":"https://westernsiding.com","image":"https://westernsiding.com/images/contact-western-siding.jpg","priceRange":"$$$$","telephone":"+1-208-855-0100","address":{"streetAddress":"850 W Franklin Rd","addressLocality":"Meridian","addressRegion":"ID","postalCode":"83642","addressCountry":"United States","@@type":"PostalAddress"},"contactPoint":{"@@type":"ContactPoint","contactType":"Sales","email":"Tom@westernsiding.com","telephone":"+1-208-855-0100"},"sameAs":["https://www.facebook.com/WesternSidingIdaho/","https://www.bbb.org/us/id/meridian/profile/siding-contractors/western-siding-1296-1000020083","https://twitter.com/westernsiding"]},{"@@context":"http://schema.org","@@type":"Website","@@id":"https://westernsiding.com/#site","name":"Western Siding","url":"https://westernsiding.com","contentRating":"G","keywords":"siding, doors, windows, installation, replacement, idaho, home exterior"},{"@@context":"http://schema.org","@@type":"WebPage","@@id":"https://westernsiding.com/","name":"Windows, Doors & Siding @@ Western Siding | Meridian Idaho","description":"Western Siding is Idaho's premiere window replacement, siding products, and door installation specialists.","publisher":{"@@type":"Person","name":"Tom Bruck"}}]</script>
+    <script type="application/ld+json">
+        [{"@@context":"http://schema.org","@@type":"LocalBusiness","logo":"https://westernsiding.com/images/western-siding-logo.png","name":"Western Siding","url":"https://westernsiding.com","image":"https://westernsiding.com/images/contact-western-siding.jpg","priceRange":"$$$$","telephone":"+1-208-855-0100","address":{"streetAddress":"850 W Franklin Rd","addressLocality":"Meridian","addressRegion":"ID","postalCode":"83642","addressCountry":"United States","@@type":"PostalAddress"},"contactPoint":{"@@type":"ContactPoint","contactType":"Sales","email":"Tom@westernsiding.com","telephone":"+1-208-855-0100"},"sameAs":["https://www.facebook.com/WesternSidingIdaho/","https://www.bbb.org/us/id/meridian/profile/siding-contractors/western-siding-1296-1000020083","https://twitter.com/westernsiding"]},{"@@context":"http://schema.org","@@type":"Website","@@id":"https://westernsiding.com/#site","name":"Western Siding","url":"https://westernsiding.com","contentRating":"G","keywords":"siding, doors, windows, installation, replacement, idaho, home exterior"},{"@@context":"http://schema.org","@@type":"WebPage","@@id":"https://westernsiding.com/","name":"Windows, Doors & Siding @@ Western Siding | Meridian Idaho","description":"Western Siding is Idaho's premiere window replacement, siding products, and door installation specialists.","publisher":{"@@type":"Person","name":"Tom Bruck"}}]
+    </script>
 }
 
 <!-- This is a comment-->
@@ -105,15 +111,20 @@
 
                 <div class="quick-contact">
                     <div class="contact-head">Contact Us Today!</div>
-                    <form id="contact-us" class="contact" method="post">
+                    @using (Html.BeginForm(null, null, FormMethod.Post, new { @action = "", id = "contact-us", @class = "contact" }))
+                    {
+                        @Html.ValidationSummary(true)
+
                         <input type="text" class="form-control" asp-for="contactUsModel.Name" placeholder="Name">
                         <input type="text" class="form-control" asp-for="contactUsModel.Email" placeholder="Email Address">
                         <input type="text" class="form-control" asp-for="contactUsModel.Phone" placeholder="Phone">
                         <input type="text" class="form-control" asp-for="contactUsModel.Referral" placeholder="How did you hear about us?">
                         <textarea row="" col="" class="form-control" asp-for="contactUsModel.Comments" placeholder="Comments"></textarea>
-                        <div class="g-recaptcha" data-sitekey="6Lc2-4IUAAAAAC_lppBH0-K-wbaDTyA9lHpijugW"></div>
-                        <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
-                    </form>
+                        <div>@Html.Recaptcha(RecaptchaSettings?.Value)</div>
+                        <input name="Form" type="hidden" value="Contact Us"><input id="recaptcha" type="submit" value="Submit">
+
+
+                    }
                     <div class="contact-footer">@ViewData["Message"]</div>
                 </div>
             </div>
