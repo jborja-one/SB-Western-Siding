@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BA.WesternSiding.DataModels;
 using BA.WesternSiding.Adapters;
-using BA.WesternSiding.Configuration;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
@@ -17,13 +13,10 @@ namespace BA.WesternSiding.Pages
     {
         private readonly IConfiguration _config;
         private readonly ISmtpService _smtpService;
-        private IRecaptchaService _recaptcha;
+        private readonly IRecaptchaService _recaptcha;
 
         [BindProperty]
         public ContactUsModel contactUsModel { get; set; }
-
-        [BindProperty]
-        public string Message { get; set; }
 
         public ContactModel(IConfiguration config, ISmtpService smtpService, IRecaptchaService recaptcha)
         {
@@ -34,10 +27,11 @@ namespace BA.WesternSiding.Pages
 
         public void OnGet() { }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
+                contactUsModel.Page = "Contact Us";
                 RecaptchaResponse recaptcha = await _recaptcha.Validate(Request);
                 if (!recaptcha.success)
                 {
@@ -46,18 +40,15 @@ namespace BA.WesternSiding.Pages
                 }
                 else
                 {
-                    ContactUsAdapter _contactUs = new ContactUsAdapter(_config, _smtpService);
-                    await _contactUs.CreateAndSendEmail(contactUsModel);
-                    ViewData["Message"] = "Your message has been recieved.";
-                    return Page();
+                    ContactUsAdapter contactUs = new ContactUsAdapter(_config, _smtpService);
+                    await contactUs.CreateAndSendEmail(contactUsModel);
+                    return RedirectToPage("/ThankYou");
                 }
             }
             else
             {
-                ViewData["Message"] = "There was a problem.  Try again!";
                 return Page();
             }
         }
-
     }
 }

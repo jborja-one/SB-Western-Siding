@@ -111,19 +111,49 @@
 
                 <div class="quick-contact">
                     <div class="contact-head">Contact Us Today!</div>
-                    @using (Html.BeginForm(null, null, FormMethod.Post, new { @action = "", id = "contact-us", @class = "contact" }))
+                    @using (@Html.BeginForm(null, null, FormMethod.Post, new { id = "contact-us", @class = "contact" }))
                     {
-                        @Html.ValidationSummary(true)
-
-                        <input type="text" class="form-control" asp-for="contactUsModel.Name" placeholder="Name">
-                        <input type="text" class="form-control" asp-for="contactUsModel.Email" placeholder="Email Address">
-                        <input type="text" class="form-control" asp-for="contactUsModel.Phone" placeholder="Phone">
-                        <input type="text" class="form-control" asp-for="contactUsModel.Referral" placeholder="How did you hear about us?">
-                        <textarea row="" col="" class="form-control" asp-for="contactUsModel.Comments" placeholder="Comments"></textarea>
-                        <div>@Html.Recaptcha(RecaptchaSettings?.Value)</div>
-                        <input name="Form" type="hidden" value="Contact Us"><input id="recaptcha" type="submit" value="Submit">
-
-
+                        @Html.ValidationSummary(true);
+                        <div>
+                            Name:
+                        </div>
+                        <div>
+                            <input asp-for="contactUsModel.Name" type="text" data-val-required="Name is a Required Field" />
+                            <span asp-validation-for="contactUsModel.Name"></span>
+                        </div>
+                        <div>
+                            Email:
+                        </div>
+                        <div>
+                            <input asp-for="contactUsModel.Email" type="text" data-val-required="Email is a Required Field" />
+                            <span asp-validation-for="contactUsModel.Email"></span>
+                        </div>
+                        <div>
+                            Phone:
+                        </div>
+                        <div>
+                            <input asp-for="contactUsModel.Phone" type="text" data-val-required="Phone is a Required Field" />
+                            <span asp-validation-for="contactUsModel.Phone"></span>
+                        </div>
+                        <div>
+                            How did you hear about us?
+                        </div>
+                        <div>
+                            <input asp-for="contactUsModel.Referral" type="text" />
+                        </div>
+                        <div>
+                            Comments:
+                        </div>
+                        <div>
+                            <textarea asp-for="contactUsModel.Comments"></textarea>
+                            <span asp-validation-for="contactUsModel.Comments"></span>
+                        </div>
+                        <div>
+                            @Html.Recaptcha(RecaptchaSettings?.Value)
+                        </div>
+                        <div>
+                            <input id="recaptcha" type="submit" value="Submit">
+                        </div>
                     }
                     <div class="contact-footer">@ViewData["Message"]</div>
                 </div>

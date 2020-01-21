@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Http;
+using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Hosting;
 
 namespace BA.WesternSiding.Adapters
 {
@@ -18,6 +21,7 @@ namespace BA.WesternSiding.Adapters
         private readonly EmailConfigurationModel _emailConfiguration;
         private readonly EmailTemplateModel _emailTemplate;
         private readonly ISmtpService _smtpService;
+        private readonly List<EmailAttachmentModel> _attachments;
 
         public EmailServerConfigModel ServerConfig { get; private set; }
         public EmailMessageModel Message { get; private set; }
@@ -28,10 +32,12 @@ namespace BA.WesternSiding.Adapters
             _emailConfiguration = _config.GetSection("EmailConfiguration").Get<EmailConfigurationModel>();
             _emailTemplate = _config.GetSection("EmailTemplates:ContactUs").Get<EmailTemplateModel>();
             _smtpService = smtpService;
+            _attachments = new List<EmailAttachmentModel>();
         }
 
         public async Task<bool> CreateAndSendEmail(ContactUsModel contactUs)
         {
+
             try
             {
                 //Get Template
@@ -57,20 +63,48 @@ namespace BA.WesternSiding.Adapters
 
                 Message = new EmailMessageModel(fromAddress, toAddresses, ccAddresses, messageSubject, messageBody, _emailTemplate.TemplateType);
                 ServerConfig = new EmailServerConfigModel(_emailConfiguration.SmtpServer, _emailConfiguration.SmtpPort, _emailConfiguration.SmtpUsername, _emailConfiguration.SmtpPassword);
+
+               if (contactUs.Attachments != null) {
+                   foreach (IFormFile formFile in contactUs.Attachments)
+                   {
+                        if (formFile.Length > 0)
+                        {
+                            var cd = ContentDispositionHeaderValue.Parse(formFile.ContentDisposition);
+                            string fileName = Path.GetFileName(cd.FileName).Trim('"');
+
+                            Stream stream = formFile.OpenReadStream();
+                            _attachments.Add(new EmailAttachmentModel(fileName, stream));
+                        }
+                   }
+               }
+               return ( await SendMailAsync());
+
             }
             catch(Exception e)
             {
                 throw new Exception("ContactUsAdapter.Create", e);
             }
+        }
 
-            return (await SendMail());
+        private MemoryStream StreamToMemory(FileStream fileStream)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            memoryStream.SetLength(fileStream.Length);
+            fileStream.Read(memoryStream.GetBuffer(), 0, (int)fileStream.Length);
+
+
+            memoryStream.Flush();
+            fileStream.Close();
+            memoryStream.Close();
+            return memoryStream;
+
 
         }
 
         private string GetEmailTemplate()
         {
             string body = null;
-            FileStream file = new FileStream(string.Format(@"Templates\\{0}", _emailTemplate.TemplateName), FileMode.Open);
+            FileStream file = new FileStream(string.Format(@"Templates\\{0}", _emailTemplate.TemplateName), FileMode.Open, FileAccess.Read);
             using(StreamReader reader = new StreamReader(file))
             {
                 body = reader.ReadToEnd();
@@ -97,16 +131,17 @@ namespace BA.WesternSiding.Adapters
                 .Replace(@"[Email]", contact.Email)
                 .Replace(@"[Phone]", contact.Phone)
                 .Replace(@"[Referral]", contact.Referral)
-                .Replace(@"[Comments]", contact.Comments);
+                .Replace(@"[Comments]", contact.Comments)
+                .Replace(@"[Page]", contact.Page);
 
             return _body;
         }
 
-        private async  Task<bool> SendMail()
+        private async Task<bool> SendMailAsync()
         {
             try
             {
-                return(await _smtpService.SendMailAsync(Message, ServerConfig, null));
+                return(await _smtpService.SendMailAsync(Message, ServerConfig, _attachments));
             }
             catch(Exception e)
             {
