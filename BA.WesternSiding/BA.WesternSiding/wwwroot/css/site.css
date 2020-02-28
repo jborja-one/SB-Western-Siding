@@ -365,62 +365,17 @@ a {
 
 article#content {
     overflow: hidden;
-    padding: 48px 0;
     line-height: 1.5em;
 }
 
-    article#content div.left, article#content div.right {
-        display: inline-block;
-        float: left
-    }
 
-    article#content div.left {
-        width: 780px;
-        margin-right: 50px
-    }
-
-    article#content div.right {
-        width: 370px
-    }
-
-nav#nav-sub {
-    float: right;
-    margin: 1em 0 1em 40px;
+div#nav-sub {
     text-align: center;
-    width: 200px
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto 2em auto;
 }
 
-    nav#nav-sub ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none
-    }
-
-        nav#nav-sub ul li {
-            display: block;
-            margin: 10px 0
-        }
-
-            nav#nav-sub ul li a {
-                display: block;
-                padding: 7px 10px;
-                transition: background-color .5s ease;
-                -webkit-transition: background-color .5s ease;
-                -moz-transition: background-color .5s ease;
-                -o-transition: background-color .5s ease;
-                color: #fff;
-                background-color: #373286;
-                border-radius: 4px;
-                behavior: url(/style/tools/PIE.htc)
-            }
-
-                nav#nav-sub ul li a:hover {
-                    background-color: #e46c28
-                }
-
-            nav#nav-sub ul li.current a {
-                background-color: #a84b17
-            }
 
 footer#footer {
     overflow: hidden;
@@ -953,14 +908,7 @@ div#specials {
             display: block
         }
 
-    article#content {
-        padding-left: 10px;
-        padding-right: 10px
-    }
 
-        article#content div.left {
-            width: 70%
-        }
 }
 @media screen and (min-width: 400px) {
     .float-right {
@@ -1057,9 +1005,7 @@ div.message-failure {
         background-image: none
     }
 
-    article#content div.left {
-        width: 65%
-    }
+
 }
 
 @media screen and (max-width:800px) {
@@ -1141,12 +1087,6 @@ div.message-failure {
             margin: 5px auto
         }
 
-    article#content div.left, article#content div.right {
-        width: 100%;
-        display: block;
-        float: none;
-        margin: 0
-    }
 
     div.quick-contact {
         margin: 1em auto
@@ -1448,14 +1388,14 @@ img.align-center {
         width: 100px;
         content: "";
         position: absolute;
-        height: 8px;
+        height: 4px;
         background-color: #e47331;
     }
     .banner .breadcrumb {
         display: block;
         font-size: 14px;
         text-transform: uppercase;
-        margin-top: 6px;
+        margin-top: 12px;
         color: #fff;
         font-weight: bold;
         text-shadow: 2px 2px 0 rgba(0, 0, 0, .5);
@@ -1486,4 +1426,134 @@ img.align-center {
     width: 20px;
     text-align: center;
     margin: 2px 0;
+}
+
+
+
+
+
+#categories {
+    width: 310px;
+    padding: 0 24px 24px 24px;
+    overflow: hidden;
+    background-color: #e47331;
+}
+    #categories h2 {
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 1.4em 0;
+    }
+.category-menu a, category-menu label {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.category-menu a:hover {
+    color: #ddd;
+}
+
+.category-menu a {
+    display: block;
+    font-size: 13px;
+    padding: 10px 15px 10px 25px;
+}
+
+.drop-down a {
+    min-width: 90px;
+}
+
+.drop-down-menu {
+    display: block;
+}
+
+.menu-title {
+    cursor: pointer;
+}
+
+.menu-title {
+    display: block;
+    padding: 10px 15px;
+    text-align: center;
+    font-weight: bold;
+    text-transform:  uppercase;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, .26);
+}
+
+.activate {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    margin: 0 0 0 -15px;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+
+/* Skin */
+
+.category-menu a, .drop-down-menu {
+}
+
+    .menu a:hover, .drop-down-menu:hover {
+    }
+
+.drop-down a {
+}
+
+    .drop-down a:hover {
+        
+    }
+
+
+.category-menu {
+}
+
+:checked ~ .menu-title {
+}
+
+.drop-down {
+    max-height: 0;
+    overflow: hidden;
+}
+
+    .drop-down a {
+    }
+
+.activate:checked ~ .drop-down {
+    max-height: 550px;
+}
+
+.drop-down, .category-menu a, .drop-down-menu {
+    -webkit-transform: translateZ(0);
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+    .drop-down-menu span {
+        display: inline-block;
+        float: right;
+    }
+.two-column-right {
+    padding: 0 12px;
+}
+.two-column-right, .two-column-left {
+    display: block;
+}
+@media screen and (min-width: 900px) {
+    article#content {
+        padding: 48px 0;
+    }
+    #two-column-flex {
+        display: flex;
+    }
+        #two-column-flex > div:first-child {
+            flex-basis: 300px;
+            margin-right: 20px;
+        }
 }

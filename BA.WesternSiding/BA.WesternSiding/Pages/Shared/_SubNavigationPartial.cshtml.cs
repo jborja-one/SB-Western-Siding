@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BA.WesternSiding.Pages.Siding
+namespace BA.WesternSiding
 {
-    public class SeamlessSteelModel : PageModel
+    public class _SubNavigationPartialModel : PageModel
     {
         public void OnGet()
         {
