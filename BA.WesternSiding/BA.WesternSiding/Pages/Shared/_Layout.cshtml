@@ -34,6 +34,7 @@
     <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/site.css" />
 </head>
 <body>
@@ -44,13 +45,9 @@
                 <a asp-page="/RequestEstimate">Request Estimate</a>
             </div>
             <div id="address">
-                850 W Franklin Rd
+                850 W Franklin Rd Meridian, Idaho 83642
                 <br>
-                Meridian, Idaho 83642
-                <br>
-                Office (208) 855-0100
-                <br>
-                Toll-Free (208) 627-0465
+                Office (208) 855-0100 | Toll-Free (208) 627-0465
             </div>
         </div>
         <nav id="nav-main">
@@ -91,29 +88,80 @@
     </header>
     @RenderBody()
     <footer id="footer">
-        <div class="inner">
-            <div id="business-info">
+        <div class="footer-top">
+            <div class="inner">
+                <div id="footer-about">
+                    <h3>
+                        About Us
+                    </h3>
+                    <p>
+                        Western Siding is a locally owned company. We began doing business in 1970 when our founder Larry Bruck brought the first continuous gutter machine into the valley. We soon expanded and added permanent siding and replacement windows to our product line.
+                    </p>
+                </div>
+                <div class="more-links">
+                    <h3>
+                        More Links
+                    </h3>
+                    <ul>
+                        <li>
+                            Installations
+                        </li>
+                        <li>
+                            Doors
+                        </li>
+                        <li>
+                            Siding
+                        </li>
+                        <li>
+                            Windows
+                        </li>
+                        <li>
+                            Promotions
+                        </li>
+                    </ul>
+                </div>
+                <div id="business-info">
+                    <h3>
+                        Contact Details
+                    </h3>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> 850 W Franklin Rd Meridian, Idaho 83642
+                        <br>
+                        <i class="fas fa-mobile-alt"></i> Office: (208) 855-0100
+                        <br>
+                        <i class="fas fa-mobile-alt"></i> Toll-Free: (208) 627-0465
+                        <br>
+                        <i class="far fa-envelope"></i> info@westernsiding.com
+                    </p>
+                </div>
+                <div id="social-media">
+                    <h2>
+                        Connect with Us
+                    </h2>
+                    <span><a href="https://www.facebook.com/WesternSidingIdaho"><i class="fab fa-facebook-f"></i></a></span>
+                    <span><a href="https://twitter.com/westernsiding"><i class="fab fa-twitter"></i></a></span>
+                    <span><a href="https://twitter.com/westernsiding"><i class="fab fa-instagram"></i></a></span>
+                    <span><a href="https://twitter.com/westernsiding"><i class="fab fa-linkedin-in"></i></a></span>
+                    <h2>
+                        Hours
+                    </h2>
+                    <p>
+                        Monday - Friday : 8:00am - 5:00pm
+                    </p>
+                    <p>
+                        Saturday - Sunday : Closed
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="inner">
                 <p>
-                    &copy; Western Siding and Windows - @DateTime.Now.Year
+                    &copy; @DateTime.Now.Year Western Siding and Windows
                 </p>
                 <p>
-                    850 W Franklin Rd Meridian, Idaho 83642
-                    <br>
-                    Office: (208) 855-0100
-                    <br>
-                    Toll-Free: (208) 627-0465
-                    <br>
-                    <data itemprop="openingHours" value="Mo,Tu,We,Th,Fr 08:00-17:00">
-                        Monday through Friday 8-5pm
-                    </data>
+                    <a href="http://boisewebhosting.com/">Boise Web Hosting</a> | <a href="http://boiseseo.com/">Boise SEO</a>
                 </p>
-            </div>
-            <div id="social-media">
-                <a class="facebook" href="https://www.facebook.com/WesternSidingIdaho"></a>
-                <a class="twitter" href="https://twitter.com/westernsiding"></a>
-            </div>
-            <div class="clear">
-                <a href="http://boisewebhosting.com/">Boise Web Hosting</a> | <a href="http://boiseseo.com/">Boise SEO</a>
             </div>
         </div>
     </footer>
