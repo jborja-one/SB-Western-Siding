@@ -49,8 +49,8 @@
 <main>
     <div class="inner">
         <article id="content">
-            <div id="buttons">
-                <div class="windows">
+            <!--<div id="buttons">
+                        <div class="windows">
                     <div>
                         <div>
                             <img src="/images/western-siding-logo.png" alt="Windows Installed by Western Siding"> We offer replacement windows and doors from Amerimax's wide product line. Our replacement windows are super energy efficient and are custom made for your home so installation becomes easy.
@@ -83,7 +83,7 @@
                         </span>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="left">
                 <h1>
                     Idaho Siding Contractors - Replacement Windows Installations | Western Siding Meridian, Idaho
@@ -107,57 +107,57 @@
                 <!--- comment -->
 
             </div>
-            <div class="right">
+            <!--<div class="right">
 
-                <div class="quick-contact">
-                    <div class="contact-head">Contact Us Today!</div>
-                    @using (@Html.BeginForm(null, null, FormMethod.Post, new { id = "contact-us", @class = "contact" }))
-                    {
-                        @Html.ValidationSummary(true);
-                        <div>
-                            Name:
-                        </div>
-                        <div>
-                            <input asp-for="contactUsModel.Name" type="text" data-val-required="Name is a Required Field" />
-                            <span asp-validation-for="contactUsModel.Name"></span>
-                        </div>
-                        <div>
-                            Email:
-                        </div>
-                        <div>
-                            <input asp-for="contactUsModel.Email" type="text" data-val-required="Email is a Required Field" />
-                            <span asp-validation-for="contactUsModel.Email"></span>
-                        </div>
-                        <div>
-                            Phone:
-                        </div>
-                        <div>
-                            <input asp-for="contactUsModel.Phone" type="text" data-val-required="Phone is a Required Field" />
-                            <span asp-validation-for="contactUsModel.Phone"></span>
-                        </div>
-                        <div>
-                            How did you hear about us?
-                        </div>
-                        <div>
-                            <input asp-for="contactUsModel.Referral" type="text" />
-                        </div>
-                        <div>
-                            Comments:
-                        </div>
-                        <div>
-                            <textarea asp-for="contactUsModel.Comments"></textarea>
-                            <span asp-validation-for="contactUsModel.Comments"></span>
-                        </div>
-                        <div>
-                            @Html.Recaptcha(RecaptchaSettings?.Value)
-                        </div>
-                        <div>
-                            <input id="recaptcha" type="submit" value="Submit">
-                        </div>
-                    }
-                    <div class="contact-footer">@ViewData["Message"]</div>
-                </div>
-            </div>
+                    <div class="quick-contact">
+                        <div class="contact-head">Contact Us Today!</div>
+                        @using (@Html.BeginForm(null, null, FormMethod.Post, new { id = "contact-us", @class = "contact" }))
+                        {
+                            @Html.ValidationSummary(true);
+                            <div>
+                                Name:
+                            </div>
+                            <div>
+                                <input asp-for="contactUsModel.Name" type="text" data-val-required="Name is a Required Field" />
+                                <span asp-validation-for="contactUsModel.Name"></span>
+                            </div>
+                            <div>
+                                Email:
+                            </div>
+                            <div>
+                                <input asp-for="contactUsModel.Email" type="text" data-val-required="Email is a Required Field" />
+                                <span asp-validation-for="contactUsModel.Email"></span>
+                            </div>
+                            <div>
+                                Phone:
+                            </div>
+                            <div>
+                                <input asp-for="contactUsModel.Phone" type="text" data-val-required="Phone is a Required Field" />
+                                <span asp-validation-for="contactUsModel.Phone"></span>
+                            </div>
+                            <div>
+                                How did you hear about us?
+                            </div>
+                            <div>
+                                <input asp-for="contactUsModel.Referral" type="text" />
+                            </div>
+                            <div>
+                                Comments:
+                            </div>
+                            <div>
+                                <textarea asp-for="contactUsModel.Comments"></textarea>
+                                <span asp-validation-for="contactUsModel.Comments"></span>
+                            </div>
+                            <div>
+                                @Html.Recaptcha(RecaptchaSettings?.Value)
+                            </div>
+                            <div>
+                                <input id="recaptcha" type="submit" value="Submit">
+                            </div>
+                        }
+                        <div class="contact-footer">@ViewData["Message"]</div>
+                    </div>
+            </div>-->
         </article>
     </div>
 </main>

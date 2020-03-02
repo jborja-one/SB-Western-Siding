@@ -48,7 +48,7 @@ dfn {
 
 h1 {
     font-size: 1.75em;
-    line-height: 1.75em;
+    line-height: 1.25em;
     color: #ed6f22;
     margin: 0;
 }
@@ -224,9 +224,14 @@ header#header {
 
 a#logo {
     float: left;
-    margin: 30px 0 30px 0
+    margin: 30px 0 0 0
 }
-
+@media screen and (min-width: 640px) {
+    a#logo {
+        float: left;
+        margin: 30px 0 30px 0
+    }
+}
     a#logo img {
         display: block;
         max-width: 140px;
@@ -366,9 +371,16 @@ a {
 article#content {
     overflow: hidden;
     line-height: 1.5em;
+    padding: 24px 12px;
 }
-
-
+#content img.responsive {
+    width: 100%;
+    max-width: 850px;
+}
+#content img.responsive-max-width {
+    width: 100%;
+    max-width: 1200px;
+}
 div#nav-sub {
     text-align: center;
     max-width: 360px;
@@ -605,16 +617,16 @@ form#contact-us, form#estimate {
     }
 
     form#contact-us input[type=text], form#estimate input[type=text] {
-        background-color: #f4f4f4;
+        background-color: #fff;
         padding: 5px;
-        border: 1px solid #eee;
+        border: 1px solid rgba(0, 0, 0, .334);
         width: 100%;
         transition: background-color .5s ease;
         -webkit-transition: background-color .5s ease;
         -moz-transition: background-color .5s ease;
         -o-transition: background-color .5s ease;
         margin: 5px 0;
-        border-radius: 4px;
+        border-radius: 1px;
         behavior: url(/style/tools/PIE.htc)
     }
 
@@ -627,7 +639,7 @@ form#contact-us, form#estimate {
     form#contact-us textarea, form#estimate textarea {
         width: 100%;
         height: 100px;
-        background-color: #f4f4f4;
+        background-color: #fff;
         padding: 5px;
         transition: background-color .5s ease;
         -webkit-transition: background-color .5s ease;
@@ -648,18 +660,19 @@ form#contact-us, form#estimate {
 
     form#contact-us input[type=submit], form#estimate input[type=submit] {
         display: block;
-        float: right;
-        border: 1px solid #ccc;
         color: #fff;
         margin-top: 10px;
-        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 14px;
+        border-style: none;
+        letter-spacing: 1px;
         background-color: #e46c28;
         transition: background-color .5s ease;
         -webkit-transition: background-color .5s ease;
         -moz-transition: background-color .5s ease;
         -o-transition: background-color .5s ease;
-        padding: 7px 15px;
-        border-radius: 4px;
+        padding: 14px 30px;
         behavior: url(/style/tools/PIE.htc)
     }
 
@@ -698,7 +711,7 @@ div#social-media span {
 .float-left, .float-right {
     float: none;
     display: block;
-    margin: 10px auto
+    margin: 10px auto;
 }
 
 
@@ -741,13 +754,18 @@ div#reviews {
     }
 
         div#reviews > a span {
-            display: block;
-            width: 33px;
+            display: inline-block;
+
             height: 33px;
             float: left;
             margin-right: 20px;
             background: url(/images/review-sprite.png) no-repeat
         }
+    div#reviews > i {
+        display: inline-block;
+        float: right;
+        width: 16px;
+    }
 
     div#reviews a.google-plus span {
         background-position: -43px 0
@@ -785,7 +803,7 @@ div.reviews {
     }
 
         div.reviews > div > span {
-            display: block
+            display: inline-block
         }
 
         div.reviews > div a {
@@ -809,7 +827,7 @@ div.reviews {
 
             div.reviews > div a span {
                 width: 100%;
-                display: block;
+                display: inline-block;
                 margin: 7px 0;
                 height: 30px;
                 background-repeat: no-repeat;
@@ -818,6 +836,9 @@ div.reviews {
 
                 div.reviews > div a span.google-plus {
                     background-image: url(/images/social-media/google-plus.jpg)
+                }
+                div.reviews > div a span.google {
+                    background-image: url(/images/social-media/google.png)
                 }
 
                 div.reviews > div a span.angies-list {
@@ -914,43 +935,19 @@ div#specials {
     .float-right {
         float: right;
         margin: 0 0 20px 20px;
-        max-width: 200px;
-        height: auto;
+        max-width: 550px !important;
     }
 
     .float-left {
         float: left;
         margin: 0 20px 20px 0;
-        max-width: 200px;
-        height: auto;
+        max-width: 550px !important;
     }
 }
-@media screen and (min-width: 600px) {
-    .float-right {
-        max-width: 300px;
-    }
 
-    .float-left {
-        max-width: 300px;
-    }
-}
-@media screen and (min-width: 900px) {
-    .float-right {
-        max-width: 450px;
-    }
 
-    .float-left {
-        max-width: 450px;
-    }
-}
 @media screen and (min-width: 1000px) {
-    .float-right {
-        max-width: 550px;
-    }
 
-    .float-left {
-        max-width: 550px;
-    }
 }
 div.message-success {
     padding: 8px 0;
@@ -1108,7 +1105,7 @@ div.message-failure {
 
 @media screen and (max-width:500px) {
     nav#nav-main {
-        margin: -69px 0 20px 0
+        margin: -10px 0 20px 0
     }
 
 
@@ -1363,6 +1360,7 @@ img.align-center {
     max-height: 234px;
     overflow: hidden;
     background-color: #373286;
+    background-image: url('/images/banner.jpg');
 }
     .banner > div {
         padding: 7.5% 0;
@@ -1405,9 +1403,7 @@ img.align-center {
             color: #fff;
             text-transform: uppercase;
         }
-.banner-about {
-    background-image: url('/images/about-banner.jpg');
-}
+
 @media screen and (min-width: 600px) {
     .banner > div div.inner {
         display: flex;
@@ -1540,14 +1536,17 @@ img.align-center {
         float: right;
     }
 .two-column-right {
-    padding: 0 12px;
+    padding-left: 24px;
+}
+.two-column-left {
+    padding-right: 24px; 
 }
 .two-column-right, .two-column-left {
     display: block;
 }
 @media screen and (min-width: 900px) {
     article#content {
-        padding: 48px 0;
+        padding: 48px 12px;
     }
     #two-column-flex {
         display: flex;
@@ -1556,4 +1555,130 @@ img.align-center {
             flex-basis: 300px;
             margin-right: 20px;
         }
+    #two-column-flex-even {
+        display: flex;
+    }
+        #two-column-flex-even div, #two-column-flex aside {
+            flex-basis: 50%;
+        }
+        #form-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #form-flex > div {
+            flex-basis: 50%;
+            padding: 5px 12px;
+        }
+            #form-flex div.comments {
+                flex-basis: 100% !important;
+            }
+}
+#map {
+    margin-top: 48px;
+}
+
+
+
+/* Slider */
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+    .slick-list:focus {
+        outline: none;
+    }
+
+    .slick-list.dragging {
+        cursor: pointer;
+    }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .slick-track:before,
+    .slick-track:after {
+        display: table;
+        content: '';
+    }
+
+    .slick-track:after {
+        clear: both;
+    }
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
 }

@@ -38,162 +38,17 @@
 <main>
     <div class="inner">
         <article id="content">
-            <div class="left">
-                <h1>
-                    About Us @@ Western Siding | Meridian, Idaho
-                </h1>
-                <p>
-                    Since 1970 Western Siding has installed thousands of windows, doors, and siding for residents of Boise, Idaho and the Treasure Valley. We use the highest quality products available, giving you many options when it comes to style, color, and manufacturer, and provide the best trained and experienced installers we can find. We do business as Larry says, "Like ladies and gentlemen". Give us a call at <strong>208 855-0100</strong> or fill out our contact form below.
-                </p>
-                <div class="message">@ViewData["Message"]</div>
-                <aside>
-                    @using (@Html.BeginForm(null, null, FormMethod.Post, new { id = "contact-us", @class = "contact" }))
-                    {
-                        @Html.ValidationSummary(true);
-                        <table>
-                            <tr>
-                                <td>
-                                    Name:
-                                </td>
-                                <td>
-                                    <input asp-for="contactUsModel.Name" type="text" data-val-required="Name is a Required Field" />
-                                    <span asp-validation-for="contactUsModel.Name"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Email:
-                                </td>
-                                <td>
-                                    <input asp-for="contactUsModel.Email" type="text" data-val-required="Email is a Required Field" />
-                                    <span asp-validation-for="contactUsModel.Email"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Phone:
-                                </td>
-                                <td>
-                                    <input asp-for="contactUsModel.Phone" type="text" data-val-required="Phone is a Required Field" />
-                                    <span asp-validation-for="contactUsModel.Phone"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    How did you hear about us?
-                                </td>
-                                <td>
-                                    <input asp-for="contactUsModel.Referral" type="text" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Comments:
-                                </td>
-                                <td>
-                                    <textarea asp-for="contactUsModel.Comments"></textarea>
-                                    <span asp-validation-for="contactUsModel.Comments"></span>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>@Html.Recaptcha(RecaptchaSettings?.Value)</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <input id="recaptcha" type="submit" value="Submit">
-                                </td>
-                            </tr>
-                        </table>
-                    }
-
-
-                    @*<form id="contact-us" class="contact">
-                            <table>
-                                <tr>
-                                    <td>
-                                        Name:
-                                    </td>
-                                    <td>
-                                        <input name="Name" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Email:
-                                    </td>
-                                    <td>
-                                        <input name="Email" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Address:
-                                    </td>
-                                    <td>
-                                        <input name="Address" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Company:
-                                    </td>
-                                    <td>
-                                        <input name="Company" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Phone:
-                                    </td>
-                                    <td>
-                                        <input name="Phone" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        How did you hear about us?
-                                    </td>
-                                    <td>
-                                        <input name="Referral" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Message:
-                                    </td>
-                                    <td>
-                                        <textarea name="Message">
-        </textarea>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="align-center">
-                                        Verification:
-                                        <br />
-                                        <span>Please type the letters you see into the box below.</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <img alt="Form Validation Code Image" src="/scripts/form-security/security-image.png.php">
-                                        <input class="verification" name="Verification Code" type="text" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <input name="Form" type="hidden" value="Contact Us"><input type="submit" value="Submit">
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>*@
-                </aside>
-            </div>
-            <div class="right">
-
-                <div id="contact-info">
+            <h1>
+                Contact Us Today
+            </h1>
+            <div id="two-column-flex-even">
+                <div class="two-column-left">
+                    <p>
+                        Since 1970 Western Siding has installed thousands of windows, doors, and siding for residents of Boise, Idaho and the Treasure Valley. We use the highest quality products available, giving you many options when it comes to style, color, and manufacturer, and provide the best trained and experienced installers we can find.
+                    </p>
+                    <p>
+                        Give us a call at <strong>208 855-0100</strong> or fill out our contact form.
+                    </p>
                     <p>
                         <strong>Western Siding</strong>
                         <br>
@@ -204,14 +59,45 @@
                         Toll-Free (208) 627-0465
                         <br>
                         Monday through Friday 8-5pm
-                        <br>
-                        Saturday by Appointment
-                    </p>
-                    <p>
-                        <img alt="Contact Western Siding - Boise, Idaho Siding Contractors" src="/images/contact-western-siding.jpg" width="260" height="83" />
                     </p>
                 </div>
+                <aside class="two-column-right">
+                    @using (@Html.BeginForm(null, null, FormMethod.Post, new { id = "contact-us", @class = "contact" }))
+                    {
+                        @Html.ValidationSummary(true);
+                        <div id="form-flex">
+                            <div>
+                                <label for="Name">Name:</label>
+                                <input asp-for="contactUsModel.Name" type="text" data-val-required="Name is a Required Field" />
+                                <span asp-validation-for="contactUsModel.Name"></span>
+                            </div>
+                            <div>
+                                <label for="Email">Email:</label>
+                                <input asp-for="contactUsModel.Email" type="text" data-val-required="Email is a Required Field" />
+                                <span asp-validation-for="contactUsModel.Email"></span>
+                            </div>
+                            <div>
+                                <label for="Phone">Phone:</label>
+                                <input asp-for="contactUsModel.Phone" type="text" data-val-required="Phone is a Required Field" />
+                                <span asp-validation-for="contactUsModel.Phone"></span>
+                            </div>
+                            <div>
+                                <label for="Referral">How did you hear about us?</label>
+                                <input asp-for="contactUsModel.Referral" type="text" />
+                            </div>
+                            <div class="comments">
+                                <label for="Messsage">Message:</label>
+                                <textarea asp-for="contactUsModel.Comments"></textarea>
+                                <span asp-validation-for="contactUsModel.Comments"></span>
+                                @Html.Recaptcha(RecaptchaSettings?.Value)
+                                <input id="recaptcha" type="submit" value="Submit">
+                            </div>
+                        </div>
+                    }
+                    <div class="message">@ViewData["Message"]</div>
+                </aside>
             </div>
+            <img id="map" src="~/images/map.jpg" alt="Western Siding Map" class="align-center responsive-max-width" />
         </article>
     </div>
 </main>
