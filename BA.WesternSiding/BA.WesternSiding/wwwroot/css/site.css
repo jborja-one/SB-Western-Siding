@@ -445,7 +445,10 @@ div.footer-bottom a {
 }
 div#buttons {
     overflow: hidden;
-    margin: 1em 0 2em 0
+    margin: 1em 0 1em 0;
+    padding-bottom: 1em;
+    font-size: 14px;
+    line-height: 1.3em;
 }
 
     div#buttons > div {
@@ -455,7 +458,7 @@ div#buttons {
         vertical-align: top;
         display: inline-block;
         overflow: hidden;
-        margin-left: 101px;
+        margin-left: 70px;
         border: 1px solid #959595;
         -webkit-box-shadow: 3px 3px 5px 0 rgba(0,0,0,.75);
         -moz-box-shadow: 3px 3px 5px 0 rgba(0,0,0,.75);

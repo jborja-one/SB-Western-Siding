@@ -8,20 +8,15 @@ $(function () {
         return this.hostname && this.hostname !== location.hostname;
     }).attr('target', '_blank');
 
-    mobileLayout = false;
+    collapsedSubNav = false;
     function moveContent() {
-        if (mobileLayout == false && $(document).width() < 960) {
-            mobileLayout = true;
-            $('header#header').after($('form#search')).after($('nav#nav-bottom'));
-            $('article#content div.product h1:eq(0)').after($('article#content div.product div.images'));
-            $("nav a[href*='/categories/']").filter("nav a[href!='/categories/products']").parent().addClass('hidden');
+        if (collapsedSubNav == false && $(document).width() < 900) {
+            collapsedSubNav = true;
+            $('input[type="checkbox"].activate').prop("checked", false);
         }
-        else if (mobileLayout == true && $(document).width() >= 960) {
-            mobileLayout = false;
-            $('div#middle').append($('nav#nav-bottom'));
-            $('nav#nav-top').after($('form#search'));
-            $('article#content div.product h1:eq(0)').before($('article#content div.product div.images'));
-            $("nav a[href*='/categories/']").parent().removeClass('hidden');
+        else if (collapsedSubNav == true && $(document).width() >= 900) {
+            collapsedSubNav = false;
+            $('input[type="checkbox"].activate').prop("checked", true);
         }
     }
     $(window).resize(moveContent);
