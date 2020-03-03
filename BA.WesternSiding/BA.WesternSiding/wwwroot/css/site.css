@@ -1396,11 +1396,11 @@ img.align-center {
         margin-top: 12px;
         color: #fff;
         font-weight: bold;
-        text-shadow: 2px 2px 0 rgba(0, 0, 0, .5);
     }
         .banner .breadcrumb a {
             display: inline-block;
             color: #fff;
+            border-bottom: 2px solid #fff;
             text-transform: uppercase;
         }
 
