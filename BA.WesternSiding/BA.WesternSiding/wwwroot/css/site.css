@@ -1386,7 +1386,7 @@ img.align-center {
         margin-top: -5px;
         margin-left: -4px;
         z-index: -1;
-        width: 100px;
+        width: 300px;
         content: "";
         position: absolute;
         height: 4px;
