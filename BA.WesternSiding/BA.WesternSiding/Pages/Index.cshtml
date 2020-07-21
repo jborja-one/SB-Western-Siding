@@ -25,26 +25,24 @@
     </script>
 }
 
-<!-- This is a comment-->
-
 <div id="slideshow">
-    <ul class="bxslider">
-        <li>
-            <img alt="exterior-siding" src="/images/slideshow/main/exterior-siding.jpg">
-        </li>
-        <li>
-            <img alt="french-doors" src="/images/slideshow/main/french-doors.jpg">
-        </li>
-        <li>
-            <img alt="ovation-siding" src="/images/slideshow/main/ovation-siding.jpg">
-        </li>
-        <li>
-            <img alt="through-the-window" src="/images/slideshow/main/through-the-window.jpg">
-        </li>
-        <li>
-            <img alt="windows" src="/images/slideshow/main/windows.jpg">
-        </li>
-    </ul>
+    <div class="bxslider">
+        <div>
+            <img srcset="/images/slideshow/mobile/exterior-siding.jpg 768w, /images/slideshow/medium/exterior-siding.jpg 1440w, /images/slideshow/main/exterior-siding.jpg 1920w" src="/images/slideshow/mobile/exterior-siding.jpg" alt="Exterior Siding">
+        </div>
+        <div>
+            <img srcset="/images/slideshow/mobile/french-doors.jpg 768w, /images/slideshow/medium/french-doors.jpg 1440w, /images/slideshow/main/exterior-siding.jpg 1920w" src="/images/slideshow/mobile/french-doors.jpg" alt="French Doors">
+        </div>
+        <div>
+            <img srcset="/images/slideshow/mobile/ovation-siding.jpg 768w, /images/slideshow/medium/ovation-siding.jpg 1440w, /images/slideshow/main/exterior-siding.jpg 1920w" src="/images/slideshow/mobile/ovation-siding.jpg" alt="Ovation Siding">
+        </div>
+        <div>
+            <img srcset="/images/slideshow/mobile/through-the-window.jpg 768w, /images/slideshow/medium/through-the-window.jpg 1440w, /images/slideshow/main/through-the-window.jpg 1920w" src="/images/slideshow/mobile/through-the-window.jpg" alt="Girl Looking Through Window">
+        </div>
+        <div>
+            <img srcset="/images/slideshow/mobile/windows.jpg 768w, /images/slideshow/medium/windows.jpg 1440w, /images/slideshow/main/windows.jpg 1920w" src="/images/slideshow/mobile/through-the-window.jpg" alt="Window Installation">
+        </div>
+    </div>
 </div>
 <main>
     <div class="inner">
@@ -102,7 +100,7 @@
                     Over the years Western Siding has provided siding installations and replacement windows installations in thousands of homes, and businesses throughout Idaho and the Treasure Valley communities of Boise, Meridian, Eagle, Nampa, and Caldwell. Visit the showroom today for our best siding prices and replacement windows installations.
                 </p>
                 <div>
-                    <iframe frameborder="0" height="315" src="https://www.youtube.com/embed/6sI4imSz5LE" width="560"></iframe>
+                    <iframe id="home-video" frameborder="0" height="315" src="https://www.youtube.com/embed/6sI4imSz5LE" width="560"></iframe>
                 </div>
             </div>
         </article>
@@ -110,7 +108,7 @@
 </main>
 @section Scripts
 {
-    <script src="~/js/jquery.bxslider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.bxslider').bxSlider({
