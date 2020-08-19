@@ -50,7 +50,7 @@ namespace BA.WesternSiding.Adapters
                 string messageBody = ReplaceTokens(body, contactUs);
 
                 //MAP ContactUsAdapter to SMTPService
-                EmailAddressModel fromAddress = new EmailAddressModel(contactUs.Name, contactUs.Email);
+                EmailAddressModel fromAddress = new EmailAddressModel(contactUs.zSHYrBwhEeJi, contactUs.hcDphOHFf0gM);
                 List<EmailAddressModel> toAddresses = new List<EmailAddressModel>()
                 {
                     new EmailAddressModel(_emailConfiguration.ToName, _emailConfiguration.DefaultToAddress)
@@ -127,11 +127,11 @@ namespace BA.WesternSiding.Adapters
 
         private string ReplaceTokens(string body, ContactUsModel contact)
         {
-            string _body = body.Replace(@"[Name]", contact.Name)
-                .Replace(@"[Email]", contact.Email)
-                .Replace(@"[Phone]", contact.Phone)
-                .Replace(@"[Referral]", contact.Referral)
-                .Replace(@"[Comments]", contact.Comments)
+            string _body = body.Replace(@"[Name]", contact.zSHYrBwhEeJi)
+                .Replace(@"[Email]", contact.hcDphOHFf0gM)
+                .Replace(@"[Phone]", contact.jYyWawnghJI4)
+                .Replace(@"[Referral]", contact.kqL8KlYyI2wJ)
+                .Replace(@"[Comments]", contact.uRa2Dx9xEXmy)
                 .Replace(@"[Page]", contact.Page);
 
             return _body;

@@ -45,15 +45,40 @@
                 We offer our best siding prices to Boise, Idaho and the Treasure Valley communities of Meridian, Eagle, Nampa, Caldwell, Star and Kuna right up front when we present the Western Siding free siding costs estimate. This service consists of a detailed proposal for siding your residential home, business office or commercial properties. We also provide our best replacement windows prices with our free replacement windows cost estimate. Fill out our estimate form below or give us a call at <strong>208 855-0100</strong>.
             </p>
             <div class="message">@ViewData["Message"]</div>
+            <form id="contact-form" action="/contact">
+                <div id="form-flex">
+                    <div>
+                        <label for="Name">Name:</label>
+                        <input name="Name" type="text" />
+                    </div>
+                    <div>
+                        <label for="Email">Email:</label>
+                        <input name="Email" type="text" />
+                    </div>
+                    <div>
+                        <label for="Phone">Phone:</label>
+                        <input name="Phone" type="text" />
+                    </div>
+                    <div>
+                        <label for="Referral">How did you hear about us?</label>
+                        <input name="Referral" type="text" />
+                    </div>
+                    <div class="comments">
+                        <label for="Messsage">Message:</label>
+                        <textarea name="Comments"></textarea>
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </form>
             @using (Html.BeginForm(null, null, FormMethod.Post, new { @action = "contact-us", id = "contact-us", @class = "contact" }))
             {
                 @Html.ValidationSummary(true)
 
-                <input type="text" class="form-control" asp-for="contactUsModel.Name" placeholder="Name">
-                <input type="text" class="form-control" asp-for="contactUsModel.Email" placeholder="Email Address">
-                <input type="text" class="form-control" asp-for="contactUsModel.Phone" placeholder="Phone">
-                <input type="text" class="form-control" asp-for="contactUsModel.Referral" placeholder="How did you hear about us?">
-                <textarea row="" col="" class="form-control" asp-for="contactUsModel.Comments" placeholder="Comments"></textarea>
+                <input type="text" class="form-control" asp-for="contactUsModel.zSHYrBwhEeJi" placeholder="Name">
+                <input type="text" class="form-control" asp-for="contactUsModel.hcDphOHFf0gM" placeholder="Email Address">
+                <input type="text" class="form-control" asp-for="contactUsModel.jYyWawnghJI4" placeholder="Phone">
+                <input type="text" class="form-control" asp-for="contactUsModel.kqL8KlYyI2wJ" placeholder="How did you hear about us?">
+                <textarea row="" col="" class="form-control" asp-for="contactUsModel.uRa2Dx9xEXmy" placeholder="Comments"></textarea>
                 <div>@Html.Recaptcha(RecaptchaSettings?.Value)</div>
                 <input name="Form" type="hidden" value="Contact Us"><input id="recaptcha" type="submit" value="Submit">
 

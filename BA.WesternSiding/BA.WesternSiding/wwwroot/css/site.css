@@ -1685,3 +1685,6 @@ img.align-center {
 .slick-arrow.slick-hidden {
     display: none;
 }
+#contact-form {
+    display: none;
+}
