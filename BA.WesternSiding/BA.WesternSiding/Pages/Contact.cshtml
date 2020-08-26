@@ -1,0 +1,129 @@
+﻿@page "/contact-us"
+@using Microsoft.Extensions.Options
+@using reCAPTCHA.AspNetCore
+@using reCAPTCHA.AspNetCore.Versions;
+@inject IOptions<RecaptchaSettings> RecaptchaSettings
+@model ContactModel
+@section Header
+{
+    <title>Contact Us @@ Western Siding | Meridian, Idaho</title>
+    <link rel="canonical" href="https://westernsiding.com/contact-us" />
+    <meta name="description" content="Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today (208)855-0100.">
+    <meta name="referrer" content="unsafe-url">
+    <meta name="of:title" content="Western Siding Contact Us Page" />
+    <meta name="og:type" content="business.business" />
+    <meta name="og:URL" content="https://westernsiding.com/contact-us" />
+    <meta name="og:image" content="https://westernsiding.com/images/western-siding-logo.png" />
+    <meta name="og:description" content="Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today (208) 855-0100." />
+    <meta name="og:site_name" content="https://westernsiding.com" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@@WesternSiding">
+    <meta name="twitter:title" content="Contact Us @@ Western Siding | Meridian, Idaho">
+    <meta name="twitter:description" content="Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today (208)855-0100.">
+    <script type="application/ld+json">
+        [{"@@context":"http://schema.org","@@type":"ContactPage","@@id":"https://westernsiding.com/contact/","name":"Contact Us @@ Western Siding | Meridian, Idaho","description":"Contact Us for Siding, Doors and Windows @@ Western Siding for replacement windows, siding products, and door installations. Call Today: (208) 855-0100.","publisher":{"@@type":"Person","name":"Tom Bruck"}},{"@@context":"https://schema.org/","@@type":"BreadcrumbList","itemListElement":[{"@@type":"ListItem","position":1,"name":"Western Siding Home","item":"https://westernsiding.com"},{"@@type":"ListItem","position":2,"name":"Contact Us @@Western Siding","item":"https://westernsiding.com/contact-us"}]}]
+    </script>
+}
+<div class="banner banner-about">
+    <div>
+        <div class="inner">
+            <h2>
+                Contact
+            </h2>
+            <span class="breadcrumb">
+                <a href="/">Home</a> / Contact
+            </span>
+        </div>
+    </div>
+</div>
+<main>
+    <div class="inner">
+        <article id="content">
+            <h1>
+                Contact Us Today
+            </h1>
+            <div id="two-column-flex-even">
+                <div class="two-column-left">
+                    <p>
+                        Since 1970 Western Siding has installed thousands of windows, doors, and siding for residents of Boise, Idaho and the Treasure Valley. We use the highest quality products available, giving you many options when it comes to style, color, and manufacturer, and provide the best trained and experienced installers we can find.
+                    </p>
+                    <p>
+                        Give us a call at <strong>208 855-0100</strong> or fill out our contact form.
+                    </p>
+                    <p>
+                        <strong>Western Siding</strong>
+                        <br>
+                        850 W Franklin Rd Meridian, Idaho 83642
+                        <br>
+                        Office: (208) 855-0100
+                        <br>
+                        Toll-Free (208) 627-0465
+                        <br>
+                        Monday through Friday 8-5pm
+                    </p>
+                </div>
+                <aside class="two-column-right">
+                    <form id="contact-form" action="/contact">
+                        <div id="form-flex">
+                            <div>
+                                <label for="Name">Name:</label>
+                                <input name="Name" type="text" />
+                            </div>
+                            <div>
+                                <label for="Email">Email:</label>
+                                <input name="Email" type="text" />
+                            </div>
+                            <div>
+                                <label for="Phone">Phone:</label>
+                                <input name="Phone" type="text" />
+                            </div>
+                            <div>
+                                <label for="Referral">How did you hear about us?</label>
+                                <input name="Referral" type="text" />
+                            </div>
+                            <div class="comments">
+                                <label for="Messsage">Message:</label>
+                                <textarea name="Comments"></textarea>
+                                <input type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </form>
+                    @using (@Html.BeginForm(null, null, FormMethod.Post, new { id = "contact-us", @class = "contact" }))
+                    {
+                        @Html.ValidationSummary(true);
+                        <div id="form-flex">
+                            <div>
+                                <label for="Name">Name:</label>
+                                <input asp-for="contactUsModel.zSHYrBwhEeJi" type="text" data-val-required="Name is a Required Field" />
+                                <span asp-validation-for="contactUsModel.zSHYrBwhEeJi"></span>
+                            </div>
+                            <div>
+                                <label for="Email">Email:</label>
+                                <input asp-for="contactUsModel.hcDphOHFf0gM" type="text" data-val-required="Email is a Required Field" />
+                                <span asp-validation-for="contactUsModel.hcDphOHFf0gM"></span>
+                            </div>
+                            <div>
+                                <label for="Phone">Phone:</label>
+                                <input asp-for="contactUsModel.jYyWawnghJI4" type="text" data-val-required="Phone is a Required Field" />
+                                <span asp-validation-for="contactUsModel.jYyWawnghJI4"></span>
+                            </div>
+                            <div>
+                                <label for="Referral">How did you hear about us?</label>
+                                <input asp-for="contactUsModel.kqL8KlYyI2wJ" type="text" />
+                            </div>
+                            <div class="comments">
+                                <label for="Messsage">Message:</label>
+                                <textarea asp-for="contactUsModel.uRa2Dx9xEXmy"></textarea>
+                                <span asp-validation-for="contactUsModel.uRa2Dx9xEXmy"></span>
+                                @(Html.Recaptcha<RecaptchaV3HiddenInput>(RecaptchaSettings.Value))
+                                <input id="recaptcha" type="submit" value="Submit">
+                            </div>
+                        </div>
+                    }
+                    <div class="message">@ViewData["Message"]</div>
+                </aside>
+            </div>
+            <img id="map" src="~/images/map.jpg" alt="Western Siding Map" class="align-center responsive-max-width" />
+        </article>
+    </div>
+</main>

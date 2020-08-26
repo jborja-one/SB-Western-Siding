@@ -1,0 +1,91 @@
+﻿@page "/free-estimate-western-siding-idaho"
+@using Microsoft.Extensions.Options
+@using reCAPTCHA.AspNetCore
+@using reCAPTCHA.AspNetCore.Versions;
+@model RequestEstimateModel
+@inject IOptions<RecaptchaSettings> RecaptchaSettings
+
+@section Header
+{
+    <title>Schedule your FREE Estimate @@ Western Siding | Meridian, Idaho</title>
+    <link rel="canonical" href="https://westernsiding.com/free-estimate-western-siding-idaho" />
+    <meta name="description" content="Schedule your Free Siding or Replacement Windows Estimate. We offer our best siding prices to Boise, Idaho and the Treasure Valley communities. Call Today (208) 855-0100.">
+    <meta name="referrer" content="unsafe-url">
+    <meta name="of:title" content="Request a FREE Estimate @@ Western Siding | Meridian, Idaho" />
+    <meta name="og:type" content="business.business" />
+    <meta name="og:URL" content="https://westernsiding.com/free-estimate-western-siding-idaho" />
+    <meta name="og:image" content="https://westernsiding.com/images/western-siding-logo.png" />
+    <meta name="og:description" content="Schedule your Free Siding or Replacement Windows Estimate. We offer our best siding prices to Boise, Idaho and the Treasure Valley communities. Call Today (208) 855-0100." />
+    <meta name="og:site_name" content="https://westernsiding.com" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@@WesternSiding">
+    <meta name="twitter:title" content="Schedule your FREE Estimate @@ Western Siding | Meridian, Idaho">
+    <meta name="twitter:description" content="Schedule your Free Siding or Replacement Windows Estimate. We offer our best siding prices to Boise, Idaho and the Treasure Valley communities. Call Today (208) 855-0100.">
+    <script type="application/ld+json">
+        [{"@@context":"http://schema.org","@@type":"ContactPage","@@id":"https://westernsiding.com/contact/","name":"Request a FREE Estimate @@ Western Siding | Meridian, Idaho","description":"Schedule your Free Siding or Replacement Windows Estimate. We offer our best siding prices to Boise, Idaho and the Treasure Valley communities. Call Today (208) 855-0100.","publisher":{"@@type":"Person","name":"Tom Bruck"}},{"@@context":"https://schema.org/","@@type":"BreadcrumbList","itemListElement":[{"@@type":"ListItem","position":1,"name":"Western Siding Home","item":"https://westernsiding.com"},{"@@type":"ListItem","position":2,"name":"Contact Us @@Western Siding","item":"https://westernsiding.com/contact-us"},{"@@type":"ListItem","position":3,"name":"Schedule your FREE Estimate @@ Western Siding | Meridian, Idaho","item":"https://westernsiding.com/free-estimate-western-siding-idaho"}]}]
+    </script>
+}
+<div class="banner banner-about">
+    <div>
+        <div class="inner">
+            <h2>
+                Request Estimate
+            </h2>
+            <span class="breadcrumb">
+                <a href="/">Home</a> / Request Estimate
+            </span>
+        </div>
+    </div>
+</div>
+<main>
+    <div class="inner">
+        <article id="content">
+            <h1>
+                <img alt="Siding Costs - Replacement Windows Free Estimate" class="float-right" height="430" src="/images/free-siding-windows-estimate.jpg" width="314" /> Schedule your FREE Siding or Replacement Windows Estimate
+            </h1>
+            <p>
+                We offer our best siding prices to Boise, Idaho and the Treasure Valley communities of Meridian, Eagle, Nampa, Caldwell, Star and Kuna right up front when we present the Western Siding free siding costs estimate. This service consists of a detailed proposal for siding your residential home, business office or commercial properties. We also provide our best replacement windows prices with our free replacement windows cost estimate. Fill out our estimate form below or give us a call at <strong>208 855-0100</strong>.
+            </p>
+            <div class="message">@ViewData["Message"]</div>
+            <form id="contact-form" action="/contact">
+                <div id="form-flex">
+                    <div>
+                        <label for="Name">Name:</label>
+                        <input name="Name" type="text" />
+                    </div>
+                    <div>
+                        <label for="Email">Email:</label>
+                        <input name="Email" type="text" />
+                    </div>
+                    <div>
+                        <label for="Phone">Phone:</label>
+                        <input name="Phone" type="text" />
+                    </div>
+                    <div>
+                        <label for="Referral">How did you hear about us?</label>
+                        <input name="Referral" type="text" />
+                    </div>
+                    <div class="comments">
+                        <label for="Messsage">Message:</label>
+                        <textarea name="Comments"></textarea>
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </form>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @action = "contact-us", id = "contact-us", @class = "contact" }))
+            {
+                @Html.ValidationSummary(true)
+
+                <input type="text" class="form-control" asp-for="contactUsModel.zSHYrBwhEeJi" placeholder="Name">
+                <input type="text" class="form-control" asp-for="contactUsModel.hcDphOHFf0gM" placeholder="Email Address">
+                <input type="text" class="form-control" asp-for="contactUsModel.jYyWawnghJI4" placeholder="Phone">
+                <input type="text" class="form-control" asp-for="contactUsModel.kqL8KlYyI2wJ" placeholder="How did you hear about us?">
+                <textarea row="" col="" class="form-control" asp-for="contactUsModel.uRa2Dx9xEXmy" placeholder="Comments"></textarea>
+                <div>@(Html.Recaptcha<RecaptchaV3HiddenInput>(RecaptchaSettings.Value))</div>
+                <input name="Form" type="hidden" value="Contact Us"><input id="recaptcha" type="submit" value="Submit">
+
+
+            }
+        </article>
+    </div>
+</main>
