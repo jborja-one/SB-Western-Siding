@@ -1,4 +1,0 @@
-﻿user-agent:*
-Disallow:
-
-Sitemap: https://westernsiding.com/sitemap.xml
