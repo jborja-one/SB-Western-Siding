@@ -1688,3 +1688,17 @@ img.align-center {
 #contact-form {
     display: none;
 }
+.more-links ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.more-links li {
+    padding-bottom: 5px;
+}
+.more-links a {
+    color: #fff;
+}
+.more-links a:hover {
+    text-decoration: underline;
+}
