@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BA.WesternSiding.Pages.Doors
 {
-    public class EntryDoorsModel : PageModel
+    public class TestEntryDoorsModel : PageModel
     {
         public void OnGet()
         {

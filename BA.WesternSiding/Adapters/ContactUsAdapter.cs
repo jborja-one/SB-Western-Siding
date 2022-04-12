@@ -64,9 +64,10 @@ namespace BA.WesternSiding.Adapters
                 Message = new EmailMessageModel(fromAddress, toAddresses, ccAddresses, messageSubject, messageBody, _emailTemplate.TemplateType);
                 ServerConfig = new EmailServerConfigModel(_emailConfiguration.SmtpServer, _emailConfiguration.SmtpPort, _emailConfiguration.SmtpUsername, _emailConfiguration.SmtpPassword);
 
-               if (contactUs.Attachments != null) {
-                   foreach (IFormFile formFile in contactUs.Attachments)
-                   {
+                if (contactUs.Attachments != null)
+                {
+                    foreach (IFormFile formFile in contactUs.Attachments)
+                    {
                         if (formFile.Length > 0)
                         {
                             var cd = ContentDispositionHeaderValue.Parse(formFile.ContentDisposition);
@@ -75,12 +76,12 @@ namespace BA.WesternSiding.Adapters
                             Stream stream = formFile.OpenReadStream();
                             _attachments.Add(new EmailAttachmentModel(fileName, stream));
                         }
-                   }
-               }
-               return ( await SendMailAsync());
+                    }
+                }
+                return (await SendMailAsync());
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception("ContactUsAdapter.Create", e);
             }
@@ -105,7 +106,7 @@ namespace BA.WesternSiding.Adapters
         {
             string body = null;
             FileStream file = new FileStream(string.Format(@"Templates\\{0}", _emailTemplate.TemplateName), FileMode.Open, FileAccess.Read);
-            using(StreamReader reader = new StreamReader(file))
+            using (StreamReader reader = new StreamReader(file))
             {
                 body = reader.ReadToEnd();
             }
@@ -115,7 +116,7 @@ namespace BA.WesternSiding.Adapters
         private string GetEmailSubject(string body)
         {
             Match match = Regex.Match(body, @"<title>\s*(.+?)\s*</title>*");
-            if(match.Success)
+            if (match.Success)
             {
                 return match.Groups[1].Value;
             }
@@ -141,9 +142,9 @@ namespace BA.WesternSiding.Adapters
         {
             try
             {
-                return(await _smtpService.SendMailAsync(Message, ServerConfig, _attachments));
+                return (await _smtpService.SendMailAsync(Message, ServerConfig, _attachments));
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception("ContactUsAdapter failed to send email", e);
             }
