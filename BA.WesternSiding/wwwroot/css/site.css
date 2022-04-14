@@ -207,6 +207,10 @@ html {
     font-size: 16px;
 }
 
+.inner{
+    justify-content: space-around;
+}
+
 div.inner {
     max-width: 1200px;
     margin: 0 auto
@@ -1505,7 +1509,7 @@ img.align-center {
 }
 
     .drop-down a:hover {
-        
+
     }
 
 
@@ -1542,7 +1546,7 @@ img.align-center {
     padding-left: 24px;
 }
 .two-column-left {
-    padding-right: 24px; 
+    padding-right: 24px;
 }
 .two-column-right, .two-column-left {
     display: block;
@@ -1701,4 +1705,34 @@ img.align-center {
 }
 .more-links a:hover {
     text-decoration: underline;
+}
+
+/* ! New Changes */
+
+/* ? Additional Siding Products - Body */
+
+.column-container{
+    display:flex;
+    justify-content: space-around;
+}
+
+.column{
+    flex:1;
+    margin:15px;
+    padding:0;
+}
+
+.column div p{
+    font-size: 12px;
+}
+
+.column-img{
+    width:100%;
+    /* height:50px; */
+}
+
+.column-logo{
+    width: 220px;
+    height: 50px;
+
 }
