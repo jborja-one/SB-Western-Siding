@@ -1754,3 +1754,28 @@ img.align-center {
 .top-paragraph p {
     margin: 0px 0px 0px 20px;
 }
+
+
+/* ? Provia Master Windows - Body */
+
+.category{
+    margin-top: 70px;
+}
+.masterGrande-list_container{
+    display: flex;
+    /* flex-direction: column; */
+    margin: 20px 0px;
+}
+
+/* .category-title{
+    margin: 20px 0px
+} */
+
+.list-img{
+    width: 250px;
+    height: auto;
+}
+
+.list-box{
+    margin-left: 40px
+}
