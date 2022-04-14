@@ -1734,5 +1734,19 @@ img.align-center {
 .column-logo{
     width: 220px;
     height: 50px;
+}
 
+/* ? Mastic Western Extreme - Body */
+
+.top-paragraph{
+    display:flex;
+    margin-top: 30px;
+}
+
+.top-image{
+    margin-right: 20px;
+}
+
+.top-paragraph p {
+    margin-left: 20px;
 }
