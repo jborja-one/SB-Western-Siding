@@ -317,7 +317,7 @@ nav#nav-main {
 
         nav#nav-main ul li {
             display: inline-block;
-            float: left
+            /* float: left */
         }
 
             nav#nav-main ul li a {
@@ -764,13 +764,13 @@ div#reviews {
             display: inline-block;
 
             height: 33px;
-            float: left;
+            /* float: left; */
             margin-right: 20px;
             background: url(/images/review-sprite.png) no-repeat
         }
     div#reviews > i {
         display: inline-block;
-        float: right;
+        /* float: right; */
         width: 16px;
     }
 
@@ -1499,7 +1499,7 @@ img.align-center {
 
 /* Skin */
 
-.category-menu a, .drop-down-menu {
+/* .category-menu a, .drop-down-menu {
 }
 
     .menu a:hover, .drop-down-menu:hover {
@@ -1517,15 +1517,15 @@ img.align-center {
 }
 
 :checked ~ .menu-title {
-}
+} */
 
 .drop-down {
     max-height: 0;
     overflow: hidden;
 }
 
-    .drop-down a {
-    }
+    /* .drop-down a {
+    } */
 
 .activate:checked ~ .drop-down {
     max-height: 550px;
@@ -1533,6 +1533,10 @@ img.align-center {
 
 .drop-down, .category-menu a, .drop-down-menu {
     -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
     -webkit-transition: all 0.35s ease;
     -moz-transition: all 0.35s ease;
     -o-transition: all 0.35s ease;
@@ -1540,7 +1544,7 @@ img.align-center {
 }
     .drop-down-menu span {
         display: inline-block;
-        float: right;
+        /* float: right; */
     }
 .two-column-right {
     padding-left: 24px;
