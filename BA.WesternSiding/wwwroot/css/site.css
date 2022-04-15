@@ -1784,3 +1784,19 @@ img.align-center {
     flex-direction: column;
     margin: 40px 0px;
 }
+
+/* ? Casement Windows */
+
+.category-columns{
+    display:flex;
+    justify-content: space-around;
+}
+
+.category-compare{
+    width: 311px;
+}
+
+.compare-img{
+    width: 200px;
+    height: 300px;
+}
