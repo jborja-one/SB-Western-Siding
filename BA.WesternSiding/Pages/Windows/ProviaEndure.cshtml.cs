@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BA.WesternSiding.Pages.Windows
 {
-    public class CraftsmanPortraitModel : PageModel
+    public class ProviaEndureModel : PageModel
     {
         public void OnGet()
         {

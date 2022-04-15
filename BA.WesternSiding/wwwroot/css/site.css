@@ -1718,6 +1718,11 @@ img.align-center {
     padding:0;
 }
 
+.column div{
+    margin:0;
+    padding:0;
+}
+
 .column div p{
     font-size: 12px;
 }

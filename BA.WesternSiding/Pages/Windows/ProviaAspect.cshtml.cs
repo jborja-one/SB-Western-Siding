@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BA.WesternSiding.Pages.Windows
 {
-    public class MastersGrandeModel : PageModel
+    public class ProviaAspectModel : PageModel
     {
         public void OnGet()
         {
