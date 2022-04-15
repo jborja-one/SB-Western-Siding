@@ -533,7 +533,7 @@ div#buttons {
     }
 
     div#buttons div.siding {
-        background: url(/images/siding.jpg)
+        background: url(/images/siding.jpg);
     }
 
 div.quick-contact {
@@ -1430,10 +1430,6 @@ img.align-center {
     text-align: center;
     margin: 2px 0;
 }
-
-
-
-
 
 #categories {
     width: 310px;
