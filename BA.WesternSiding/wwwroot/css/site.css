@@ -405,11 +405,16 @@ div.footer-top > div {
     padding: 0 12px;
 }
 
+.footer-top .inner{
+    justify-content: space-between;
+}
+
 @media screen and (min-width: 600px) {
     div.footer-top div.inner {
         display: flex;
         align-content: stretch;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
         div.footer-top div.inner > div {
@@ -421,6 +426,7 @@ div.footer-top > div {
     div.footer-top div.inner {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
         div.footer-top div.inner > div {
