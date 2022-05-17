@@ -22,6 +22,12 @@ steps:
     command: custom
     arguments: sources update -Name "BA.Common" -Username "shawn@shawnwbailey.com" -Password "$(System.AccessToken)" -StorePasswordInClearText -ConfigFile ./NuGet.Config
 
+- task: UseDotNet@2
+  displayName: 'Use .Net 6.0'
+  inputs:
+    version: 6.0x
+    includePreviewVersions: true
+
 - task: NuGetCommand@2
   displayName: 'Create Project Assets ConfigFile'
   inputs:
@@ -29,12 +35,6 @@ steps:
     restoreSolution: '$(solution)'
     feedsToUse: config
     nugetConfigPath: ./NuGet.Config
-
-- task: UseDotNet@2
-  displayName: 'Use .Net 6.0'
-  inputs:
-    version: 6.0x
-    includePreviewVersions: true
 
 - task: VSBuild@1
   inputs:
