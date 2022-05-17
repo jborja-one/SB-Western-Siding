@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: 'windows-2022'
 
 variables:
   solution: '**/*.sln'
@@ -27,6 +27,11 @@ steps:
   inputs:
     majorVersion: 6.x
     includePreviewVersions: true
+
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 
+    checkLatest: true
 
 - task: NuGetCommand@2
   displayName: 'Create Project Assets ConfigFile'
