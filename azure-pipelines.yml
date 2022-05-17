@@ -25,7 +25,7 @@ steps:
 - task: UseDotNet@2
   displayName: 'Use .Net 6.0'
   inputs:
-    version: 6.0x
+    majorVersion: 6.x
     includePreviewVersions: true
 
 - task: NuGetCommand@2
