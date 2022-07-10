@@ -2,7 +2,7 @@
 <br />
 
 <p align='center'>
-  <img src="/Volumes/MAC-DRIVE/shawn-bailey/WesternSiding/BA.WesternSiding/wwwroot/images/western-siding-50-years-logo.png" width='350px' >
+  <img src="BA.WesternSiding/wwwroot/images/western-siding-50-years-logo.png" width='350px' >
 </p>
 
 Established in 1970 by Larry Bruck, Western Siding serves Boise, Idaho and the entirety of the Treasure Vally. Over the last four years we’ve grown and prospered by living up to our mission to provide the best quality siding products. By providing these quality products and services, we can make our customers happy they chose Western Siding for their home or business. We do business, as Larry says, “Like ladies and gentlemen.”
