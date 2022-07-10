@@ -4,10 +4,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
 trigger:
-- development
+- master
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: 'windows-2022'
 
 variables:
   solution: '**/*.sln'
@@ -16,11 +16,20 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 
+    checkLatest: true
 
 - task: NuGetCommand@2
   inputs:
     command: custom
     arguments: sources update -Name "BA.Common" -Username "shawn@shawnwbailey.com" -Password "$(System.AccessToken)" -StorePasswordInClearText -ConfigFile ./NuGet.Config
+
+- task: UseDotNet@2
+  displayName: 'Use .Net 6.0'
+  inputs:
+    majorVersion: 6.x
+    includePreviewVersions: true
 
 - task: NuGetCommand@2
   displayName: 'Create Project Assets ConfigFile'

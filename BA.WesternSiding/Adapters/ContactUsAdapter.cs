@@ -58,7 +58,7 @@ namespace BA.WesternSiding.Adapters
 
                 List<EmailAddressModel> ccAddresses = new List<EmailAddressModel>()
                 {
-                    new EmailAddressModel("Support", "support@shawnwbailey.com")
+                    new EmailAddressModel("Email Compliance", "contactforms@shawnwbailey.com")
                 };
 
                 Message = new EmailMessageModel(fromAddress, toAddresses, ccAddresses, messageSubject, messageBody, _emailTemplate.TemplateType);
