@@ -22,14 +22,14 @@ View live: <a href='https://westernsiding.com/'>Western Siding</a>
 
 -   The landing page has convenient and clearly designed, as well as conveniently placed category links with short animation displaying a brief description.
 
-<img src='/Volumes/MAC-DRIVE/shawn-bailey/WesternSiding/BA.WesternSiding/wwwroot/images/ScreenShot-HomePage.png' >
+<img src='BA.WesternSiding/wwwroot/images/ScreenShot-HomePage.png' >
     <br />
 
 ## Category Page
 
 -   Using a \_SubMenu throughout several pages including breadcrumb for easy navigation.
 
-<img src='/Volumes/MAC-DRIVE/shawn-bailey/WesternSiding/BA.WesternSiding/wwwroot/images/ScreenShot-CategoryPage.png' >
+<img src='BA.WesternSiding/wwwroot/images/ScreenShot-CategoryPage.png' >
     <br />
 
 ## Contact Page
@@ -38,7 +38,7 @@ View live: <a href='https://westernsiding.com/'>Western Siding</a>
 -   Concise contact form for easy use
 -   Convenient map, displaying exact store location.
 
-<img src='/Volumes/MAC-DRIVE/shawn-bailey/WesternSiding/BA.WesternSiding/wwwroot/images/ScreenShot-ContactPage.png' >
+<img src='BA.WesternSiding/wwwroot/images/ScreenShot-ContactPage.png' >
     <br />
 
 # Technologies
